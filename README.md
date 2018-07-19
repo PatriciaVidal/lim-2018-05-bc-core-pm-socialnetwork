@@ -24,7 +24,7 @@ más comentado.
 
 Este proyecto se enfoca crear una red social, para lo cual usaremos 
 herramientas como: Google Forms ( para realizar las encuestas), entrevistas, sketch
-(diseños a lapiz y papel), figma (para el diseño del prototipo en alta fidelidad 
+(diseños a lapiz y papel), Illustrator (para el diseño del prototipo en alta fidelidad 
 tanto para mobiles, tablets como para la web), posterior al diseño definido, usaremos
 HTML (un lenguaje de marcardo, nos servirá para construir la estructura la red social),
 Boostrap ( framework que nos será de gran ayuda para darle estilos a nuestro proyecto), 
