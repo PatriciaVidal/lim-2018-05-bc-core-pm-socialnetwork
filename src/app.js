@@ -13,12 +13,12 @@ const btnGoogle = document.getElementById('btnGoogle');
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      console.log('User is signed in.');
+      console.log('Usuario Logueado');
       login.classList.add("hiden");
       logout.classList.remove("hiden");
       username.innerHTML = `Bienvenida ${user.displayName}`;
     } else {
-      console.log('No user is signed in.');
+      console.log('Sin usuario');
       login.classList.remove("hiden");
       logout.classList.add("hiden");
     }
@@ -48,7 +48,7 @@ btnLogin.addEventListener('click', () => {
 
 btnLogout.addEventListener('click', () => {
   firebase.auth().signOut().then(function() {
-    console.log('Cerro Sesión');
+    console.log('Cerró Sesión');
   }).catch(function(error) {
     console.log('Error al cerrar Sesión');
   });

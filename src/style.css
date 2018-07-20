@@ -1,80 +1,71 @@
-body{
-    background-color: #c9d15c;
-    
-}
-input{
-    border-radius: 5px;
-    height: 25px;
-}
-
-.login-google{
-    width:50px;
-    height:50px;
-    background-image: url(../image/google.png);
-    margin: 1px;
-    padding:5px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+@media (min-width: 768px) {
+  .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+      margin-left: 25%;
   }
-  .login-google:hover{
-    opacity: 0.50;
-    -moz-opacity: .50;
-    filter:alpha (opacity=50);
-  }
-
-  .login-facebook{
-    width:50px;
-    height:50px;
-    background-image: url(../image/fb.png);
-    margin: 1px;
-    padding:5px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-
-  }
-  .login-facebook:hover{
-    opacity: 0.50;
-    -moz-opacity: .50;
-    filter:alpha (opacity=50);
-  }
-
-
-.card{
-    width: 350px;
-    height: 600px;
-    background: #c9d15c;
-    border-radius: 10px;
-    padding: 30px;
-    position: relative;
-    margin-top: 30px;
 }
 
-.section-login{
-    width: 300px;
-    height: 550px;
-    border-radius: 10px;
-    background-color:white;
-    padding: 25px; 
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
+.omb_login .omb_authTitle {
+  text-align: center;
+line-height: 300%;
 }
 
-.section-login:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-
-
-/* Galaxy S3, S4, S5: 360 x 640  */
-@media only screen and (max-width: 360px) {
-
+.omb_login .omb_socialButtons a {
+color: white;
+opacity:0.9;
 }
-/* Galaxy Tab 2 y 3 (7.0 pulgadas): 600 x 1024  */
-@media only screen and (max-width:600px){
-
-
+.omb_login .omb_socialButtons a:hover {
+  color: white;
+opacity:1;    	
 }
-/* Pantallas medianas: 1280 x 720 / 1280 x 800  */
-@media only screen and (max-width:1280px){
+.omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
+.omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
 
 
+.omb_login .omb_loginOr {
+position: relative;
+font-size: 1.5em;
+color: #aaa;
+margin-top: 1em;
+margin-bottom: 1em;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+}
+.omb_login .omb_loginOr .omb_hrOr {
+background-color: #cdcdcd;
+height: 1px;
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+}
+.omb_login .omb_loginOr .omb_spanOr {
+display: block;
+position: absolute;
+left: 50%;
+top: -0.6em;
+margin-left: -1.5em;
+background-color: white;
+width: 3em;
+text-align: center;
+}			
+
+.omb_login .omb_loginForm .input-group.i {
+width: 2em;
+}
+.omb_login .omb_loginForm  .help-block {
+  color: red;
+}
+
+
+@media (min-width: 768px) {
+  .omb_login .omb_forgotPwd {
+      text-align: right;
+  margin-top:10px;
+ }		
+}
+
+.hiden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
