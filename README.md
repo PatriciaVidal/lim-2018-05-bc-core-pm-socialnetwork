@@ -36,8 +36,8 @@ y también usaremos **JavaScript** (este lenguaje de programación nos servirá 
 Tomando como punto de partida los requerimientos del cliente, realizamos el Sprint Planning 
 de la semana, con sus respectivas épicas, tal como se muestra en la siguiente imagen.
 
-![épicas](image/Screenshot_00.png)
-[Abrir Trello](https://trello.com/b/7DNWOgiS/red-social)
+![épicas](image/Screenshot_00.png) <br>
+[Abrir Trello](https://trello.com/b/7DNWOgiS/red-social)<br>
 
 ### Encuesta 
 
