@@ -134,6 +134,7 @@ Además encontramos información sobre el porcentaje de las actividades más fre
 
 *  Resumen de entrevistas con usuarios.
 *  Link/screenshots del prototipo de alta fidelidad.
+
 ![l](image/1.jpeg)
 ![l](image/2.jpeg)
 
