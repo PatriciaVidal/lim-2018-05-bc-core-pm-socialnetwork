@@ -2,13 +2,11 @@ body{
     background-color: #c9d15c;
     
 }
-.input{
+input{
     border-radius: 5px;
+    height: 25px;
 }
 
-button{
-    border-radius: 5px;
-}
 .login-google{
     width:50px;
     height:50px;
