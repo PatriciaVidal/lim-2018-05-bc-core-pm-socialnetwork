@@ -37,13 +37,14 @@ Tomando como punto de partida los requerimientos del cliente, realizamos el Spri
 de la semana, con sus respectivas épicas, tal como se muestra en la siguiente imagen.
 
 ![épicas](image/Screenshot_00.png)
+[Abrir Trello](https://trello.com/b/7DNWOgiS/red-social)
 
 ### Encuesta 
 
 Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
 entorno de ellos, obtuvimos los siguientes resultados:
 
-[Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+[Abrir encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
 
   ![b](image/Screenshot_1.png)
   ![c](image/Screenshot_2.png)
@@ -133,7 +134,7 @@ Además encontramos información sobre el porcentaje de las actividades más fre
 
 
 *  Resumen de entrevistas con usuarios.
-*  Link/screenshots del prototipo de alta fidelidad.
+*  Link/screenshots del prototipo de alta fidelidad.<br>
 
 ![l](image/1.jpeg)
 ![l](image/2.jpeg)
