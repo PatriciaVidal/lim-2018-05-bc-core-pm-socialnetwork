@@ -2,11 +2,17 @@ body{
     background-color: #c9d15c;
     
 }
+.input{
+    border-radius: 5px;
+}
 
+button{
+    border-radius: 5px;
+}
 .login-google{
-    width:35px;
-    height:35px;
-    content: url(../image/fb-1.png);
+    width:50px;
+    height:50px;
+    background-image: url(../image/google.png);
     margin: 1px;
     padding:5px;
     -moz-border-radius: 50px;
@@ -19,9 +25,9 @@ body{
   }
 
   .login-facebook{
-    width:35px;
-    height:35px;
-    background-color: blueviolet;
+    width:50px;
+    height:50px;
+    background-image: url(../image/fb.png);
     margin: 1px;
     padding:5px;
     -moz-border-radius: 50px;
