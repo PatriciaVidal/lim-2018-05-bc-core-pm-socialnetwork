@@ -11,19 +11,22 @@
 <body>
     <!-- Autenticación -->
     <div class="login">
-        
-        <div id= "section-login" class="section-login">
+
+        <!-- Sección Login -->
+        <div id="section-login" class="section-login">
             <br>
             <picture>
                 <img src="../image/logo.png">
             </picture>
-            <br> Email
             <br>
-            <input type="email" id="email" class="input-email" placeholder="Ingrese correo" required>
             <br>
-            <br> Password
             <br>
-            <input type="password" id="password" class="input-password" placeholder="Password" required>
+            <br>
+            <input type="email" id="email" class="input-email" placeholder="Correo electrónico" required>
+            <br>
+
+            <br>
+            <input type="password" id="password" class="input-password" placeholder="Contraseña" required>
             <br>
             <br>
             <input type="button" id="btnLogin" class="button-login" value="Ingresar">
@@ -36,26 +39,36 @@
             <input type="button" id="btnFacebook" class="button-facebook" value="facebook" class="login-facebook">
             <br> - o -
             <br>
-            <input type="button" id="btnRegister" class="button-registrarse" value="Registrarme">
+            <input type="button" id="btnRegister1" class="button-registrarse" value="Quiero registrarme">
         </div>
+
         <!-- Sección Registro -->
-        <div class="register">
+        <div id="register" class="hiden">
             <img src="../image/logo.png">
             <br>
-            <input type="text" id="name" class="" placeholder="Nombre">
             <br>
-            <input type="text" id="last-name" class="" placeholder="Apellidos">
             <br>
-            <input type="text" id="e-mail" class="" placeholder="Correo electrónico">
             <br>
-            <input type="text" id="password-one" class="" placeholder="Contraseña">
+            <input type="text" id="name-register" class="" placeholder="Nombre">
             <br>
-            <input type="text" id="password-two" class="" placeholder="Repita contraseña">
             <br>
-            <input type="checkbox" id="register-terminos" class="">
-            <label for="register-terminos">Acepto los terminos y condiciones</label>
+            <input type="text" id="lastname-register" class="" placeholder="Apellidos">
             <br>
-            <input type="button" id="btnRegister" class="" value="REGISTRARME">
+            <br>
+            <input type="email" id="email-register" class="" placeholder="Correo electrónico">
+            <br>
+            <br>
+            <input type="password" id="password-register1" class="" placeholder="Contraseña">
+            <br>
+            <br>
+            <input type="password" id="password-register2" class="" placeholder="Repetir contraseña">
+            <br>
+            <br>
+            <input type="checkbox" id="register-terminos" class="checkbox-condiciones">
+            <label for="register-terminos"> Acepto los terminos y condiciones</label>
+            <br>
+            <br>
+            <input type="button" id="btnRegister2" class="" value="REGISTRARME">
         </div>
 
         <!--LogOut -->
@@ -65,9 +78,10 @@
         </div>
     </div>
 
+    <!-- Initialize Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script>
-        // Initialize Firebase
+
         var config = {
             apiKey: "AIzaSyAy08U8EI5dbQZXauEIeRP1e6GgfmKg90k",
             authDomain: "fir-prueba-labo.firebaseapp.com",

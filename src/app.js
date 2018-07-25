@@ -1,14 +1,21 @@
 const login = document.getElementById('section-login');
-console.log(login);
 const logout = document.getElementById('logout');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const btnRegister = document.getElementById('btnRegister')
+const btnRegister1 = document.getElementById('btnRegister1')
+const btnRegister2 = document.getElementById('btnRegister2')
 const btnLogin = document.getElementById('btnLogin')
 const btnLogout = document.getElementById('btnLogout')
 const btnFacebook = document.getElementById('btnFacebook');
 const btnGoogle = document.getElementById('btnGoogle');
+const register = document.getElementById('register');
+
+const usernameRegister = document.getElementById('username-register');
+const emailRegister = document.getElementById('email-register');
+const passwordRegister1 = document.getElementById('password-register1');
+const passwordRegister2 = document.getElementById('password-register1');
+
 
 
 window.onload = () => {
@@ -26,8 +33,15 @@ window.onload = () => {
   });
 }
 
-btnRegister.addEventListener('click', () => {
-  firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
+btnRegister1.addEventListener('click', () => {
+  login.classList.add("hiden");
+  register.classList.remove("hiden");
+})
+
+btnRegister2.addEventListener('click', () => {
+  register.classList.add("hiden");
+  logout.classList.remove("hiden");
+  firebase.auth().createUserWithEmailAndPassword(emailRegister.value, passwordRegister1.value)
   .then(() => {
     console.log('Usuario Creado');
   })
@@ -36,11 +50,12 @@ btnRegister.addEventListener('click', () => {
   });
 })
 
-
 btnLogin.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
   .then (() => {
     console.log('Verificado')
+    login.classList.add("hiden");
+    logout.classList.remove("hiden");
   })
   .catch(function(error) {
     console.log('Contraseña Incorrecta')
@@ -50,12 +65,17 @@ btnLogin.addEventListener('click', () => {
 btnLogout.addEventListener('click', () => {
   firebase.auth().signOut().then(function() {
     console.log('Cerró Sesión');
+    login.classList.remove("hiden");
+    logout.classList.add("hiden");
   }).catch(function(error) {
     console.log('Error al cerrar Sesión');
   });
 })
 
 btnFacebook.addEventListener('click', () => {
+  login.classList.add("hiden");
+  logout.classList.remove("hiden");
+
   var provider = new firebase.auth.FacebookAuthProvider();
   provider.setCustomParameters({
     'display' : 'popup'
@@ -68,9 +88,13 @@ btnFacebook.addEventListener('click', () => {
       console.log(error.email);
       console.log(error.credential);
   });
+  username.innerHTML="";
+  email.innerHTML="";
 })
 
 btnGoogle.addEventListener('click',() => {
+  login.classList.add("hiden");
+  logout.classList.remove("hiden");
   var provider = new firebase.auth.GoogleAuthProvider();
 
   //provider.setCustomParameters({
