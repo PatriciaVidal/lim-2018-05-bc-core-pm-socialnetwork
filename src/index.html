@@ -11,6 +11,8 @@
 <body>
     <!-- Autenticación -->
     <div class="login">
+        
+        <div id= "section-login" class="section-login">
             <br>
             <picture>
                 <img src="../image/logo.png">
@@ -36,24 +38,31 @@
             <br>
             <input type="button" id="btnRegister" class="button-registrarse" value="Registrarme">
         </div>
-     <!-- Sección Registro -->
-     <div class="register">
+        <!-- Sección Registro -->
+        <div class="register">
             <img src="../image/logo.png">
             <br>
-            <input type="text" id="" class="" placeholder="Nombre">
+            <input type="text" id="name" class="" placeholder="Nombre">
             <br>
-            <input type="text" id="" class="" placeholder="Apellidos">
+            <input type="text" id="last-name" class="" placeholder="Apellidos">
             <br>
-            <input type="text" id="" class="" placeholder="Correo electrónico">
+            <input type="text" id="e-mail" class="" placeholder="Correo electrónico">
             <br>
-            <input type="text" id="" class="" placeholder="Contraseña">
+            <input type="text" id="password-one" class="" placeholder="Contraseña">
             <br>
-            <input type="text" id="" class="" placeholder="Repita contraseña">
-                        <br>
+            <input type="text" id="password-two" class="" placeholder="Repita contraseña">
+            <br>
             <input type="checkbox" id="register-terminos" class="">
             <label for="register-terminos">Acepto los terminos y condiciones</label>
-                        <br>
-            <input type="button" id="" class="" value="REGISTRARME">
+            <br>
+            <input type="button" id="btnRegister" class="" value="REGISTRARME">
+        </div>
+
+        <!--LogOut -->
+        <div id="logout" class="hiden">
+            <p id="username"></p>
+            <input type="button" name="" value="Logout" id="btnLogout">
+        </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>

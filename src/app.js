@@ -1,4 +1,5 @@
-const login = document.getElementById('login');
+const login = document.getElementById('section-login');
+console.log(login);
 const logout = document.getElementById('logout');
 const username = document.getElementById('username');
 const email = document.getElementById('email');

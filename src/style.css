@@ -3,7 +3,7 @@ body{
   width: 100%;
   height: 100%;
   margin: 0;
-  }
+}
 
 input{
   border-radius: 5px;
@@ -45,38 +45,38 @@ input{
   border-radius: 50px;
 
 }
-
-#logo{
-  align-items: center;
+.login-facebook:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
 }
 
-#btnFacebook{background: #3b5998;}
-#btnGoogle{background: #c32f10;}
-#btnLogin{background:#C657B0;}
-#btnRegister{background:#65C550;}
-
-.omb_login .omb_loginOr {
-position: relative;
-font-size: 1.5em;
-color: #aaa;
-margin-top: 1em;
-margin-bottom: 1em;
-padding-top: 0.5em;
-padding-bottom: 0.5em;
+.section-login{
+  width: 300px;
+  height: 550px;
+  border-radius: 10px;
+  background-color:white;
+  padding: 25px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
 }
 
-.omb_login .omb_loginOr .omb_hrOr {
-background-color: #cdcdcd;
-height: 1px;
-margin-top: 0px !important;
-margin-bottom: 0px !important;
+.section-login:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.hiden {
+  display: none;
 }
 
 .show {
-display: block;
-}			
+  display: block;
+}
 
-
+.register{
+  display: none;
+  
+}
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
 
