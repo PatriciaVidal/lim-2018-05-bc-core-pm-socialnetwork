@@ -1,22 +1,49 @@
-@media (min-width: 768px) {
-  .omb_row-sm-offset-3 div:first-child[class*="col-"] {
-      margin-left: 25%;
+body{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   }
+
+input{
+  border-radius: 5px;
+  height: 25px;
+  width: 300px;
 }
 
-.omb_login .omb_authTitle {
-  text-align: center;
-line-height: 300%;
+.login{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  border-radius: 10px;
 }
 
-.omb_login .omb_socialButtons a {
-color: white;
-opacity:0.9;
+.login-google{
+  width:50px;
+  height:50px;
+  background-image: url(../image/google.png);
+  margin: 1px;
+  padding:5px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+.login-google:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
 }
 
-.omb_login .omb_socialButtons a:hover {
-  color: white;
-opacity:1;    	
+.login-facebook{
+  width:50px;
+  height:50px;
+  background-image: url(../image/fb.png);
+  margin: 1px;
+  padding:5px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+
 }
 
 #logo{
@@ -45,32 +72,22 @@ margin-top: 0px !important;
 margin-bottom: 0px !important;
 }
 
-.omb_login .omb_loginOr .omb_spanOr {
+.show {
 display: block;
-position: absolute;
-left: 50%;
-top: -0.6em;
-margin-left: -1.5em;
-background-color: white;
-width: 3em;
-text-align: center;
 }			
 
-.omb_login .omb_loginForm .input-group.i {
-width: 2em;
-}
 
-@media (min-width: 768px) {
-  .omb_login .omb_forgotPwd {
-      text-align: right;
-  margin-top:10px;
- }		
-}
+/* Galaxy S3, S4, S5: 360 x 640  */
+@media only screen and (max-width: 360px) {
 
-.hiden {
-  display: none;
 }
+/* Galaxy Tab 2 y 3 (7.0 pulgadas): 600 x 1024  */
+@media only screen and (max-width:600px){
 
-.show {
-  display: block;
+
+}
+/* Pantallas medianas: 1280 x 720 / 1280 x 800  */
+@media only screen and (max-width:1280px){
+
+
 }
