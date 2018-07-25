@@ -35,8 +35,6 @@ y también usaremos **JavaScript** (este lenguaje de programación nos servirá 
 
 Tomando como punto de partida los requerimientos del cliente, realizamos el Sprint Planning de la semana, con sus respectivas épicas, tal como se muestra en la siguiente imagen.
 
-![épicas](image/Screenshot_00.png)
-
 ### Encuesta 
 
 Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
