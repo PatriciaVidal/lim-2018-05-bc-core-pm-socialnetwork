@@ -38,9 +38,7 @@ Tomando como punto de partida los requerimientos del cliente, realizamos el Spri
 ### Encuesta 
 
 Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
-entorno de ellos, obtuvimos los siguientes resultados:
-
-[Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+entorno de ellos, obtuvimos los siguientes resultados:Aquí link de encuesta realizada [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
 
   ![b](image/Screenshot_1.png)
   ![c](image/Screenshot_2.png)
@@ -100,29 +98,29 @@ El nombre de la red social que creamos es **Happy babies**. <br> Esta red social
       + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
       + Al recargar la página debo de poder ver los textos editados
 
-*  Quiénes son los principales usuarios de producto.<br>
+*  **Quiénes son los principales usuarios de producto.**<br>
 El producto está dirigido a madres o padres millennials (nacidos entre 1983 - 2000), que de por sí ya tienen una facilidad con el uso de la tecnología, tomándolo en cuenta para que puedan compartir conocimientos y contribuir con información útil para cuidados del bebé.
 
-*  Cómo descubriste las necesidades de los usuarios.<br>
+*  **Cómo descubriste las necesidades de los usuarios.**<br>
 Logramos observar que el público al que va dirigido compartía en sus redes (principalmente en facebook o via mail) temas relacionados con el nacimiento de su bebé, pero ya que en el facebook los temas son variados quedaba de lado los artículos de un mismo interés y no había más oportunidad de enfocarse en temas de este rubro. Entonces acudían a consejos de sus pediatras, parientes o amistades que por inexperiencia sabían poco o nada sobre este tema tan importante.
 
-*  Qué problema resuelve el producto para estos usuarios.<br>
+*  **Qué problema resuelve el producto para estos usuarios.**<br>
 El problema era que en una red social común se perdía información en el muro con respecto a temas relacionados a la crianza del bebé, así que lo que resuelve esta nueva red social es tener un espacio con este tema en común que es muy amplio para analizar, expresar, explayarse, compartir artículos, talleres, eventos, crear redes entre los contactos, opiniones, experiencias, conferencias en distintos lugares a nivel nacional e internacional.
 
 
-*  Cuáles son los objetivos de estos usuarios en relación con el producto.<br>
+*  **Cuáles son los objetivos de estos usuarios en relación con el producto.**<br>
 Comunicar temas relacionados a la crianza del bebé, recordarles a los demás usuarios que no están solos en esta nueva etapa de sus vidas, mantener la calma, además de cuidar sus emociones ya que a la larga son los comportamientos que también aprenderá el bebé durante sus 5 primeros años que marcarán su vida.
 
-*  Cuáles son las principales funcionalidades del producto y cuál es su prioridad.<br>
+*  **Cuáles son las principales funcionalidades del producto y cuál es su prioridad.**<br>
 Tener una red social con un tema específico que puedan compartir sus conocimientos para que aprendan mutuamente de otros conceptos de manera inmediata solo con conectarse a la app **Happy babies**. La prioridad es darle a los padres información destacada sobre paternidad.
 
-*  Cómo verificaste que el producto les está resolviendo sus problemas.<br>
+*  **Cómo verificaste que el producto les está resolviendo sus problemas.**<br>
 Verificamos testeando en usuarios reales, para tener un feedback sobre la app y les pareció coherente poder separar un tema que pueden enfocarse para así contribuir con la sociedad.
 
-* Cómo te asegurarás que estos usuarios usen este producto.<br>
+* **Cómo te asegurarás que estos usuarios usen este producto.**<br>
 Los usarían ya que el producto final cubre una necesidad a un determinado público que no precisamente son minoría.
 
-*  Benchmark de las principales redes sociales.<br>
+*  **Benchmark de las principales redes sociales.**<br>
 Una de nuestras conclusiones es que la gente está más acostumbrada a la distribución del diseño de la red social facebook, así que vamos a tomarla en cuenta para el diseño y funcionalidad.
 ![l](image/porcentajesbenchmark.png)
 
