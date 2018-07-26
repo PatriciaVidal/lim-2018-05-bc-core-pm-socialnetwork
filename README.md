@@ -35,6 +35,7 @@ Tomando como punto de partida los requerimientos del cliente, realizamos el Spri
 
 ![épicas](image/Screenshot_00.png)
 
+
 Además usamos Trello para especificar las actividades durante los sprints<br>
 Link para ver el [Trello](https://trello.com/b/7DNWOgiS/red-social)<br>
 
@@ -47,6 +48,10 @@ Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que 
 entorno de ellos, obtuvimos los siguientes resultados:
 
 Link para ver la [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+
+Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
+entorno de ellos, obtuvimos los siguientes resultados:Aquí link de encuesta realizada [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+
 
  ![b](image/Screenshot_1.png)
  ![c](image/Screenshot_2.png)
@@ -95,6 +100,7 @@ Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (bo
 
 *  **Definición del producto:**<br>
 El nombre de la red social que creamos es **Happy babies**. <br> Esta red social es para tratar temas relacionados a las etapas del crecimiento del bebé (desde el inicio del embarazo a los 5 años), en la que madres o padres aportan testimonios, datos, tips, talleres. Un espacio para que todos ellos puedan crecer juntos.
+
   
   
  +  **Cuáles son los elementos básicos que tiene una red social.**<br>
@@ -108,6 +114,20 @@ El nombre de la red social que creamos es **Happy babies**. <br> Esta red social
      + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
      + Al recargar la página debo de poder ver los textos editados
 
+    
+    
+  +  Cuáles son los elementos básicos que tiene una red social.<br>
+      + Poder publicar un post.
+      + Poder poner like a una publicación.
+      + Llevar un conteo de los likes.
+      + Poder eliminar un post específico.
+      + Poder publicar y mostrar los posts que son sólo para mi (o amigos - ver Hacker edition 😉) y para todo público.
+      + Pedir confirmación antes de eliminar un post.
+      + Al darle click en el botón editar, debe cambiar el texto por un input que permita editar el texto y cambiar el link por guardar.
+      + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
+      + Al recargar la página debo de poder ver los textos editados
+
+
 *  **Quiénes son los principales usuarios de producto.**<br>
 El producto está dirigido a madres o padres millennials (nacidos entre 1983 - 2000), que de por sí ya tienen una facilidad con el uso de la tecnología, tomándolo en cuenta para que puedan compartir conocimientos y contribuir con información útil para cuidados del bebé.
 
@@ -115,7 +135,11 @@ El producto está dirigido a madres o padres millennials (nacidos entre 1983 - 2
 Logramos observar que el público al que va dirigido compartía en sus redes (principalmente en facebook o via mail) temas relacionados con el nacimiento de su bebé, pero ya que en el facebook los temas son variados quedaba de lado los artículos de un mismo interés y no había más oportunidad de enfocarse en temas de este rubro. Entonces acudían a consejos de sus pediatras, parientes o amistades que por inexperiencia sabían poco o nada sobre este tema tan importante.
 
 *  **Qué problema resuelve el producto para estos usuarios.**<br>
+
 El problema era que en una red social común se perdía información en el muro con respecto a temas relacionados a la crianza del bebé, así que lo que resuelve **Happy babies** es tener un espacio con este tema en común que es muy amplio para analizar, expresar, explayarse, compartir artículos, talleres, eventos, crear redes entre los contactos, opiniones, experiencias, conferencias en distintos lugares a nivel nacional e internacional.
+
+El problema era que en una red social común se perdía información en el muro con respecto a temas relacionados a la crianza del bebé, así que lo que resuelve esta nueva red social es tener un espacio con este tema en común que es muy amplio para analizar, expresar, explayarse, compartir artículos, talleres, eventos, crear redes entre los contactos, opiniones, experiencias, conferencias en distintos lugares a nivel nacional e internacional.
+
 
 
 *  **Cuáles son los objetivos de estos usuarios en relación con el producto.**<br>
@@ -126,6 +150,11 @@ Tener una red social con un tema específico que puedan compartir sus conocimien
 
 *  **Cómo verificaste que el producto les está resolviendo sus problemas.**<br>
 Verificamos testeando en usuarios reales, para tener un feedback sobre la app y les pareció coherente poder separar un tema que pueden enfocarse para así contribuir con la sociedad.
+
+
+* **Cómo te asegurarás que estos usuarios usen este producto.**<br>
+Los usarían ya que el producto final cubre una necesidad a un determinado público que no precisamente son minoría.
+
 
 *  **Benchmark de las principales redes sociales.**<br>
 Una de nuestras conclusiones es que la gente está más acostumbrada a la distribución del diseño de la red social facebook, así que vamos a tomarla en cuenta para el diseño y funcionalidad.
