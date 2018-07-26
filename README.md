@@ -14,7 +14,8 @@ vivir sin ellas.
 
 Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
 en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
+para 
+químicos en la que los usuarios podían publicar artículos sobre sus
 investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
 de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
 más comentado.
@@ -26,14 +27,13 @@ Este proyecto se enfoca crear una red social, para lo cual usaremos
 herramientas como: Google Forms (para realizar las encuestas), entrevistas online, sketch
 (diseños a lápiz y papel), Balsamiq (para la creación del prototipo de media fidelidad), Figma (para el diseño del prototipo en alta fidelidad: para móbiles, tablets y web), además de realizar un feedback con el usuario final para saber sobre su experiencia con la app creada.
 
-Posterior al diseño definido, usaremos
-**HTML** (un lenguaje de marcado, nos servirá para construir la estructura de la red social),
-Bootstrap (framework que nos será de gran ayuda para darle estilos a nuestro proyecto), 
-y también usaremos **JavaScript** (este lenguaje de programación nos servirá para darle funcionalidad). Finalmente usaremos **CSS** para darle un formato orientado a las necesidades de los usuarios, así como el color adecuado respecto a los resultados de la investigación de mercado.
+Posterior al diseño definido, usaremos **HTML** (un lenguaje de marcado, nos servirá para construir la estructura de la red social), además de **JavaScript** (este lenguaje de programación nos servirá para darle funcionalidad). Finalmente usaremos **CSS** para darle un formato orientado a las necesidades de los usuarios, así como el color adecuado respecto a los resultados de la investigación de mercado.
 
-## Sprint 1
+## Sprints
 
 Tomando como punto de partida los requerimientos del cliente, realizamos el Sprint Planning de la semana, con sus respectivas épicas, tal como se muestra en la siguiente imagen.
+
+![épicas](image/Screenshot_00.png)
 
 ### Encuesta 
 
@@ -56,7 +56,7 @@ entorno de ellos, obtuvimos los siguientes resultados:
 
 ### Resultados en base a la encuesta
 
-* Tomando en cuenta las elecciones de los usuarios, el tema de la red social será sobre EDUCACIÓN, a partir de aquí nos enfocaremos en un tema específico, en este caso elegimos educación para madres y padres primerizos, tomando en cuenta desde la etapa del embarazo hasta los 5 años.
+* Tomando en cuenta las elecciones de los usuarios, la red social será EDUCACIÓN, a partir de aquí nos enfocaremos en un tema específico, en este caso elegimos educación para madres y padres primerizos, tomando en cuenta desde la etapa del embarazo hasta los 5 años de la criatura.
   
 ### Diagrama de flujo del proyecto
   
@@ -64,17 +64,19 @@ entorno de ellos, obtuvimos los siguientes resultados:
 
    ![k](image/Screenshot_000.png)
 
-### Sketch
+### Sketch de baja fidelidad
+![] (image/sketch mobile.jpg)
+![] (image/sketch web.jpg)
+
+### Creación de logo:
+Mantenemos una misma línea gráfica para la versiones creadas.
+Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (botones)
+![] (image/ExplicacionLOGO.png)
 
 
-### Prototipo
-
-### Presentación en plataformas digitales (celular, tablet y vista web)
-![mockupCel](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20cel.png)
-![mockupTablet](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20tablet.png)
-![mockupWeb](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20web%20es.png)
-
-
+### Prototipo de alta fidelidad 
+![version celular](https://gph.is/2LUIb1W)
+![version web](https://gph.is/2mHwlgW)
 
 
 ## Checklist
@@ -107,7 +109,7 @@ El producto está dirigido a madres o padres millennials (nacidos entre 1983 - 2
 Logramos observar que el público al que va dirigido compartía en sus redes (principalmente en facebook o via mail) temas relacionados con el nacimiento de su bebé, pero ya que en el facebook los temas son variados quedaba de lado los artículos de un mismo interés y no había más oportunidad de enfocarse en temas de este rubro. Entonces acudían a consejos de sus pediatras, parientes o amistades que por inexperiencia sabían poco o nada sobre este tema tan importante.
 
 *  Qué problema resuelve el producto para estos usuarios.<br>
-El problema era que en una red social común se perdía información en el muro con respecto a temas relacionados a la crianza del bebé, así que lo que resuelve esta nueva red social es tener un espacio con este tema en común que es muy amplio para analizar, expresar, explayarse, compartir artículos, talleres, eventos, crear redes entre los contactos, opiniones, experiencias, conferencias en distintos lugares a nivel nacional e internacional.
+El problema era que en una red social común se perdía información en el muro con respecto a temas relacionados a la crianza del bebé, así que lo que resuelve **Happy babies** es tener un espacio con este tema en común que es muy amplio para analizar, expresar, explayarse, compartir artículos, talleres, eventos, crear redes entre los contactos, opiniones, experiencias, conferencias en distintos lugares a nivel nacional e internacional.
 
 
 *  Cuáles son los objetivos de estos usuarios en relación con el producto.<br>
@@ -119,21 +121,19 @@ Tener una red social con un tema específico que puedan compartir sus conocimien
 *  Cómo verificaste que el producto les está resolviendo sus problemas.<br>
 Verificamos testeando en usuarios reales, para tener un feedback sobre la app y les pareció coherente poder separar un tema que pueden enfocarse para así contribuir con la sociedad.
 
-* Cómo te asegurarás que estos usuarios usen este producto.<br>
-Los usarían ya que el producto final cubre una necesidad a un determinado público que no precisamente son minoría.
-
 *  Benchmark de las principales redes sociales.<br>
 Una de nuestras conclusiones es que la gente está más acostumbrada a la distribución del diseño de la red social facebook, así que vamos a tomarla en cuenta para el diseño y funcionalidad.
-![l](image/porcentajesbenchmark.png)
-
-Además encontramos información sobre el porcentaje de las actividades más frecuentes que realizan los usuarios al ingresar en una red social.
-![l](image/porcentajeusoderedes.png)
-
 
 *  Resumen de entrevistas con usuarios.
-*  Link/screenshots del prototipo de alta fidelidad.
 *  Conclusiones de testing con el prototipo de alta fidelidad con usuarios.
 *  Conclusiones de testing con el producto en HTML.
+
+### Presentación en plataformas digitales (celular, tablet y vista web)
+![mockupCel](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20cel.png)
+![mockupTablet](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20tablet.png)
+![mockupWeb](https://github.com/PatriciaVidal/lim-2018-05-bc-core-pm-socialnetwork/blob/master/image/mockup%20web%20es.png)
+
+
 
 ### Pruebas / tests
 
