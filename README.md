@@ -65,13 +65,13 @@ entorno de ellos, obtuvimos los siguientes resultados:
    ![k](image/Screenshot_000.png)
 
 ### Sketch de baja fidelidad
-![] (image/sketch mobile.jpg)
-![] (image/sketch web.jpg)
+![l](image/sketch mobile.jpg)
+![m](image/sketch web.jpg)
 
 ### Creación de logo:
 Mantenemos una misma línea gráfica para la versiones creadas.
 Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (botones)
-![] (image/ExplicacionLOGO.png)
+![n](image/ExplicacionLOGO.png)
 
 
 ### Prototipo de alta fidelidad 
