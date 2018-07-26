@@ -62,11 +62,11 @@ entorno de ellos, obtuvimos los siguientes resultados:
   
 * Se realizó un diagrama de flujo enfocándonos en los pasos que seguiría la persona que está interesada en usar la red social.
 
-   ![k](image/Screenshot_000.png)
+   ![k](image/Screenshot_000.jpeg)
 
 ### Sketch de baja fidelidad
-![l](image/sketch mobile.jpg)
-![m](image/sketch web.jpg)
+![l](image/sketchmobile.jpg)
+![m](image/sketchweb.jpg)
 
 ### Creación de logo:
 Mantenemos una misma línea gráfica para la versiones creadas.
