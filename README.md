@@ -35,7 +35,7 @@ Tomando como punto de partida los requerimientos del cliente, realizamos el Spri
 
 ![épicas](image/Screenshot_00.png)
 
-Además usamos Trello para especificar lo que haciamos durante los sprints
+Además usamos Trello para especificar las actividades durante los sprints<br>
 Link para ver el [Trello](https://trello.com/b/7DNWOgiS/red-social)
 ![webTrello](image/Trello.jpg)
 
