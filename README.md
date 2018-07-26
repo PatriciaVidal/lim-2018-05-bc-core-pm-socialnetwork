@@ -75,8 +75,8 @@ Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (bo
 
 
 ### Prototipo de alta fidelidad 
-![versioncelular](https://media.giphy.com/media/21PfLyFWDablPaKtuD/giphy.gif)
-![versionweb](https://media.giphy.com/media/5R1FLcAKYgmdaGYAqE/giphy.gif)
+![versioncelular](https://media.giphy.com/media/21PfLyFWDablPaKtuD/giphy.gif?raw=true"title")
+![versionweb](https://media.giphy.com/media/5R1FLcAKYgmdaGYAqE/giphy.gif?raw=true"title")
 
 
 ## Checklist
