@@ -14,7 +14,7 @@ vivir sin ellas.
 
 Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
 en una ronda de financiamiento con inversionistas, se presentó una red social
-para 
+para
 químicos en la que los usuarios podían publicar artículos sobre sus
 investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
 de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
@@ -23,7 +23,7 @@ más comentado.
 
 ## Introducción
 
-Este proyecto se enfoca crear una red social, para lo cual usaremos 
+Este proyecto se enfoca crear una red social, para lo cual usaremos
 herramientas como: Google Forms (para realizar las encuestas), entrevistas online, sketch
 (diseños a lápiz y papel), Balsamiq (para la creación del prototipo de media fidelidad), Figma (para el diseño del prototipo en alta fidelidad: para móbiles, tablets y web), además de realizar un feedback con el usuario final para saber sobre su experiencia con la app creada.
 
@@ -35,34 +35,37 @@ Tomando como punto de partida los requerimientos del cliente, realizamos el Spri
 
 ![épicas](image/Screenshot_00.png)
 
-### Encuesta 
+Además usamos Trello para especificar lo que haciamos durante los sprints
+Link para ver el [Trello](https://trello.com/b/7DNWOgiS/red-social)
+![webTrello](image/Trello.jpg)
 
-Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
+
+### Encuesta
+
+Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del
 entorno de ellos, obtuvimos los siguientes resultados:
 
-[Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+Link para ver la [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
 
-  ![b](image/Screenshot_1.png)
-  ![c](image/Screenshot_2.png)
-  ![d](image/Screenshot_3.png)
-  ![e](image/Screenshot_4.png)
-  ![f](image/Screenshot_5.png)
-  ![g](image/Screenshot_6.png)
-  ![h](image/Screenshot_7.png)
-  ![i](image/Screenshot_8.png)
-  ![j](image/Screenshot_9.png)
+ ![b](image/Screenshot_1.png)
+ ![c](image/Screenshot_2.png)
+ ![d](image/Screenshot_3.png)
+ ![e](image/Screenshot_4.png)
+ ![f](image/Screenshot_5.png)
+ ![g](image/Screenshot_6.png)
+ ![h](image/Screenshot_7.png)
+ ![i](image/Screenshot_8.png)
+ ![j](image/Screenshot_9.png)
 
 ***
 
 ### Resultados en base a la encuesta
 
 * Tomando en cuenta las elecciones de los usuarios, la red social será EDUCACIÓN, a partir de aquí nos enfocaremos en un tema específico, en este caso elegimos educación para madres y padres primerizos, tomando en cuenta desde la etapa del embarazo hasta los 5 años de la criatura.
-  
-### Diagrama de flujo del proyecto
-  
-* Se realizó un diagrama de flujo enfocándonos en los pasos que seguiría la persona que está interesada en usar la red social.
+ ### Diagrama de flujo del proyecto
+ * Se realizó un diagrama de flujo enfocándonos en los pasos que seguiría la persona que está interesada en usar la red social.
 
-   ![k](image/Screenshot_000.jpeg)
+  ![k](image/Screenshot_000.jpeg)
 
 ### Sketch de baja fidelidad
 ![l](image/sketchmobile.jpg)
@@ -74,7 +77,7 @@ Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (bo
 ![n](image/ExplicacionLOGO.png)
 
 
-### Prototipo de alta fidelidad 
+### Prototipo de alta fidelidad
 **Version celular**<br>
 ![versioncelular](image/prototipomobile.gif)<br><br>
 **Version web**<br>
@@ -91,18 +94,18 @@ Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (bo
 
 *  **Definición del producto:**<br>
 El nombre de la red social que creamos es **Happy babies**. <br> Esta red social es para tratar temas relacionados a las etapas del crecimiento del bebé (desde el inicio del embarazo a los 5 años), en la que madres o padres aportan testimonios, datos, tips, talleres. Un espacio para que todos ellos puedan crecer juntos.
-    
-    
-  +  **Cuáles son los elementos básicos que tiene una red social.**<br>
-      + Poder publicar un post.
-      + Poder poner like a una publicación.
-      + Llevar un conteo de los likes.
-      + Poder eliminar un post específico.
-      + Poder publicar y mostrar los posts que son sólo para mi (o amigos - ver Hacker edition 😉) y para todo público.
-      + Pedir confirmación antes de eliminar un post.
-      + Al darle click en el botón editar, debe cambiar el texto por un input que permita editar el texto y cambiar el link por guardar.
-      + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
-      + Al recargar la página debo de poder ver los textos editados
+  
+  
+ +  **Cuáles son los elementos básicos que tiene una red social.**<br>
+     + Poder publicar un post.
+     + Poder poner like a una publicación.
+     + Llevar un conteo de los likes.
+     + Poder eliminar un post específico.
+     + Poder publicar y mostrar los posts que son sólo para mi (o amigos - ver Hacker edition 😉) y para todo público.
+     + Pedir confirmación antes de eliminar un post.
+     + Al darle click en el botón editar, debe cambiar el texto por un input que permita editar el texto y cambiar el link por guardar.
+     + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
+     + Al recargar la página debo de poder ver los textos editados
 
 *  **Quiénes son los principales usuarios de producto.**<br>
 El producto está dirigido a madres o padres millennials (nacidos entre 1983 - 2000), que de por sí ya tienen una facilidad con el uso de la tecnología, tomándolo en cuenta para que puedan compartir conocimientos y contribuir con información útil para cuidados del bebé.
