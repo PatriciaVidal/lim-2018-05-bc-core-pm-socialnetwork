@@ -20,7 +20,7 @@ const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
 // Verificar si tenemos nuestro usuario logueado
-window.onload = () => {
+window.onload = () => { 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log('Usuario Logueado');
