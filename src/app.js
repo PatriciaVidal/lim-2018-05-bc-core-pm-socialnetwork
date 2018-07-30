@@ -19,13 +19,15 @@ const btnSave = document.getElementById('btnSave');
 const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
-window.onload = () => {
+// Verificar si tenemos nuestro usuario logueado
+window.onload = () => { 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log('Usuario Logueado');
       login.classList.add("hiden");
       logout.classList.remove("hiden");
       username.innerHTML = `Bienvenida ${user.displayName}`;
+      console.log(user);
     } else {
       console.log('Sin usuario');
       login.classList.remove("hiden");
@@ -39,6 +41,7 @@ btnRegister1.addEventListener('click', () => {
   register.classList.remove("hiden");
 })
 
+// Evento que registra a un nuevo usuario
 btnRegister2.addEventListener('click', () => {
   register.classList.add("hiden");
  logout.classList.remove("hiden");
@@ -52,6 +55,7 @@ btnRegister2.addEventListener('click', () => {
     });
 })
 
+// Evento que permite entrar a la red social usando correo y contraseña
 btnLogin.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(() => {
@@ -64,6 +68,7 @@ btnLogin.addEventListener('click', () => {
     });
 })
 
+// evento que permite cerrar sesion
 btnLogout.addEventListener('click', () => {
   firebase.auth().signOut().then(function () {
     console.log('Cerró Sesión');
@@ -74,6 +79,7 @@ btnLogout.addEventListener('click', () => {
   });
 })
 
+// evento que permite iniciar sesion con una cuenta de Facebook
 btnFacebook.addEventListener('click', () => {
   login.classList.add("hiden");
   logout.classList.remove("hiden");
@@ -83,7 +89,9 @@ btnFacebook.addEventListener('click', () => {
     'display': 'popup'
   });
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) { console.log('Logueado con Fb') })
+    .then(function (result) { 
+      console.log('Logueado con Fb')
+     })
     .catch(function (error) {
       console.log(error.code);
       console.log(error.message);
@@ -94,17 +102,17 @@ btnFacebook.addEventListener('click', () => {
   email.innerHTML = "";
 })
 
+// evento que permite iniciar sesion con una cuenta de google
 btnGoogle.addEventListener('click', () => {
   login.classList.add("hiden");
   logout.classList.remove("hiden");
+
   var provider = new firebase.auth.GoogleAuthProvider();
 
-  //provider.setCustomParameters({
-  //  'login_hint': 'user@example.com'
-  //});
-
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) { console.log('Login Google') })
+    .then(function (result) { 
+      console.log('Login Google')
+     })
     .catch(function (error) {
       console.log(error.code);
       console.log(error.message);
