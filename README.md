@@ -2,7 +2,7 @@
 
 ## Integrantes
 
-    * Maricruz Enrique Rivera
+    * Maricruz J. Enrique Rivera
     * Mary Katty Vicuña Ore
     * Patricia Vidal Ramirez
 
@@ -66,13 +66,6 @@
 
 ### Resultados en base a la encuesta
 
-<<<<<<< HEAD
-    * Tomando en cuenta las elecciones de los usuarios, la red social será EDUCACIÓN, a partir de aquí nos enfocaremos en un tema específico, en este caso elegimos educación para madres y padres primerizos, tomando en cuenta desde la etapa del embarazo hasta los 5 años de la criatura.
-
- ### Diagrama de flujo del proyecto
-
-    * Se realizó un diagrama de flujo enfocándonos en los pasos que seguiría la persona que está interesada en usar la red social.
-=======
 * Tomando en cuenta las elecciones de los usuarios, la red social será EDUCACIÓN, a partir de aquí nos enfocaremos en un tema específico, en este caso elegimos educación para madres y padres primerizos, tomando en cuenta desde la etapa del embarazo hasta los 5 años de la criatura.
 
 ### Entrevista
@@ -83,7 +76,6 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
 
 ### Diagrama de flujo del proyecto
  * Se realizó un diagrama de flujo enfocándonos en los pasos que seguiría la persona que está interesada en usar la red social.
->>>>>>> 26bbf705b7227a273d11b879cb53d0a0dfc61445
 
   ![k](image/Screenshot_000.jpeg)
 
