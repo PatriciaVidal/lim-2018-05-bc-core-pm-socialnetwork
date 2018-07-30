@@ -19,6 +19,10 @@ const btnSave = document.getElementById('btnSave');
 const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
+//Verifica si usuario esta logeado o no.
+//Onload guarda informaciòn de la sesiòn iniciada lo cual permite
+//no volver a ingresar datos si no se ha cerrado sesion
+//Verifica si usuario esta logeado o no.
 window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -146,6 +150,7 @@ btnLogin.addEventListener('click', () => {
     });
 })
 
+//Evento logearse
 btnLogout.addEventListener('click', () => {
   firebase.auth().signOut().then(function () {
     console.log('Cerró Sesión');
@@ -156,6 +161,7 @@ btnLogout.addEventListener('click', () => {
   });
 })
 
+//Evento logearse con Facebook
 btnFacebook.addEventListener('click', () => {
   login.classList.add("hiden");
   logout.classList.remove("hiden");
@@ -176,14 +182,11 @@ btnFacebook.addEventListener('click', () => {
   email.innerHTML = "";
 })
 
+//Evento logearse con Google
 btnGoogle.addEventListener('click', () => {
   login.classList.add("hiden");
   logout.classList.remove("hiden");
   var provider = new firebase.auth.GoogleAuthProvider();
-
-  //provider.setCustomParameters({
-  //  'login_hint': 'user@example.com'
-  //});
 
   firebase.auth().signInWithPopup(provider)
     .then(function (result) { console.log('Login Google') })
