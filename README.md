@@ -56,7 +56,6 @@
     ![b](image/Screenshot_1.png)
     ![c](image/Screenshot_2.png)
     ![d](image/Screenshot_3.png)
-    ![e](image/Screenshot_4.png)
     ![f](image/Screenshot_5.png)
     ![g](image/Screenshot_6.png)
     ![h](image/Screenshot_7.png)
