@@ -80,12 +80,14 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
 
 ### Creación de logo:
 
-Mantenemos una misma línea gráfica para la versiones creadas.
+Mantenemos una misma línea gráfica para la versiones creadas.<br>
 Tipografías usadas: 
 + Chewy (logo)
 + Myriad Pro (input, textos en post)
-+ Arial (botones)
++ Arial (botones) <br>
+**Opciones de logo:**
 ![n](image/opcionesLogo.jpg)
+**Logo Final:**
 ![ñ](image/ExplicacionLOGO.png)
 
 
