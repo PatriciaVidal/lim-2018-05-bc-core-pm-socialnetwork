@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="friend.css">
+    <title>Friend</title>
 </head>
+
 <body>
 
- <!-- Link de Friends -->
- <section id="friend" class="hiden">
+    <!-- Link de Friends -->
+    <section id="friend" class="hiden">
         <div class="friend">
             <p>Mis amigos</p>
             <input type="button">
@@ -19,7 +22,6 @@
             <input type="button">
         </div>
         <main>
-            <br>
             <div class="friend-post">
                 Name User
                 <img src="../image/user.jpg">
@@ -31,6 +33,10 @@
         </div>
     </section>
 
-    
+    <!-- Inicializa Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="config.js"></script>
+    <script src="friend.js"></script>
 </body>
+
 </html>
