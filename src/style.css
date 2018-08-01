@@ -102,13 +102,14 @@ nav li a{
 background-color: #A05BA6;
 color: white;
 text-decoration: none;
-padding: 10px 5px;
+height: 30px;
+padding: 10px 15px;
 display: block;
 float: left;
 }
 
 nav li a:hover{
-  background-color: #82BC54;
+  background-color: #824787;
 }
 
 
@@ -116,6 +117,9 @@ header{
   background-color: #A05BA6;
 }
 
+#home, #search, #friend, #menu{
+  width: 25px;
+}
 
 
 
