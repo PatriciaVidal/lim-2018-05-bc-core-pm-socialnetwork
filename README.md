@@ -8,8 +8,8 @@
 
 ## Preámbulo
 
- Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido
- nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas.
+Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes sociales han invadido
+nuestras vidas. Las amamos u odiamos, y muchxs no podemos vivir sin ellas.
 
 Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
 en una ronda de financiamiento con inversionistas, se presentó una red social
@@ -42,13 +42,8 @@ Además usamos Trello para especificar las actividades durante los sprints<br>
 
 ### Encuesta
 
-Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del
-entorno de ellos, obtuvimos los siguientes resultados:
-
-Link para ver la [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
-
 Realizamos una encuesta a 50 personas de nuestro entorno y a la vez algunos que eran del 
-entorno de ellos, obtuvimos los siguientes resultados:Aquí link de encuesta realizada [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
+entorno de ellos, obtuvimos los siguientes resultados: Aquí link de encuesta realizada [Encuesta](https://goo.gl/forms/qDz2VB1k2nCl5zp12)
 
 
 ![b](image/Screenshot_1.png)
@@ -85,9 +80,10 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
 
 ### Creación de logo:
 
-Mantenemos una misma línea gráfica para la versiones creadas.
-Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (botones)
-![n](image/ExplicacionLOGO.png)
+**Opciones de logo:**
+![n](image/opcionesLogo.jpg)
+**Logo Final:**
+![ñ](image/ExplicacionLOGO.png)
 
 
 ### Prototipo de alta fidelidad
@@ -120,18 +116,6 @@ Tipografías usadas: Chewy (logo), Myriad Pro (input, textos en post), Arial (bo
      + Al darle click en el botón editar, debe cambiar el texto por un input que permita editar el texto y cambiar el link por guardar.
      + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
      + Al recargar la página debo de poder ver los textos editados
-
-        
-  +  **Cuáles son los elementos básicos que tiene una red social.**<br>
-      + Poder publicar un post.
-      + Poder poner like a una publicación.
-      + Llevar un conteo de los likes.
-      + Poder eliminar un post específico.
-      + Poder publicar y mostrar los posts que son sólo para mi (o amigos - ver Hacker edition 😉) y para todo público.
-      + Pedir confirmación antes de eliminar un post.
-      + Al darle click en el botón editar, debe cambiar el texto por un input que permita editar el texto y cambiar el link por guardar.
-      + Al darle guardar debe cambiar de vuelta a un texto normal pero con la información editada.
-      + Al recargar la página debo de poder ver los textos editados
 
 
 *  **Quiénes son los principales usuarios de producto.**<br>
