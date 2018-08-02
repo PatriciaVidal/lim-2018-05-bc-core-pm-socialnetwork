@@ -14,51 +14,58 @@
     <div class="content">
         <div class="login">
             <div id="presentación-login" class="presentación-login">
-            <img src="../image/logo.png">
-            <p>Aqui va la presentación del login</p>
-        </div>
+                <img src="../image/logo.png">
+                <p>Aqui va la presentación del login</p>
+            </div>
             <div class="content-login">
-        <!-- Sección Login -->
+                <!-- Sección Login -->
                 <div id="section-login" class="hiden">
 
-            <div>
-                <img src="../image/logo.png">
-                <p>Iniciar Sesión</p>
+                    <div>
+                        <img src="../image/logo.png">
+                        <p>Iniciar Sesión</p>
+                    </div>
+                    <div>
+                        <input type="email" id="email" class="input-email" placeholder="Correo electrónico" required>
+                        <input type="password" id="password" class="input-password" placeholder="Contraseña" required>
+                        <input type="button" id="btnLogin" class="button-login" value="Ingresar">
+                        <br> Ingresar con :
+                        <input type="button" id="btnGoogle" class="button-google" value="google" class="login-google">
+                        <input type="button" id="btnFacebook" class="button-facebook" value="facebook" class="login-facebook">
+                        <br> - o -
+                        <input type="button" id="btnRegister1" class="button-registrarse" value="Quiero registrarme">
+                    </div>
+                </div>
             </div>
-            <div>
-            <input type="email" id="email" class="input-email" placeholder="Correo electrónico" required>
-            <input type="password" id="password" class="input-password" placeholder="Contraseña" required>
-            <input type="button" id="btnLogin" class="button-login" value="Ingresar">
-            <br> Ingresar con :
-            <input type="button" id="btnGoogle" class="button-google" value="google" class="login-google">
-            <input type="button" id="btnFacebook" class="button-facebook" value="facebook" class="login-facebook">
-            <br> - o -
-            <input type="button" id="btnRegister1" class="button-registrarse" value="Quiero registrarme">
-        </div>
+
         </div>
 
-        <!-- Sección Registro -->
-        <div id="presentación-register" class="hiden">
-            <img src="../image/logo.png">
-            <p>Aqui va la presentación del registro</p>
-        </div>
+        <div id="register" class="hiden" >
+            <!-- Sección Registro -->
+            <div id="presentación-register" class="hiden">
+                <img src="../image/logo.png">
+                <p>Aqui va la presentación del registro</p>
+            </div>
             <div class="content-register">
                 <div id="section-register" class="hiden">
-       
-            <div>
-                <img src="../image/logo.png">
-                <p>Iniciar Sesión</p>
-            </div>
-            <div>
+
+                    <div>
+                        <img src="../image/logo.png">
+                        <p>Iniciar Sesión</p>
+                    </div>
+                    <div>
                         <input type="text" id="name-register" class="input-name" placeholder="Nombre">
                         <input type="text" id="lastname-register" class="input-lastname" placeholder="Apellidos">
                         <input type="email" id="email-register" class="input-email-register" placeholder="Correo electrónico">
                         <input type="password" id="password-register1" class="input-password-register1" placeholder="Contraseña">
                         <input type="password" id="password-register2" class="input-password-register2" placeholder="Repetir contraseña">
-                <input type="checkbox" id="register-terminos" class="checkbox-condiciones">
-                <label for="register-terminos"> Acepto los terminos y condiciones</label>
-                <input type="button" id="btnRegister2" class="" value="REGISTRARME">
+                        <input type="checkbox" id="register-terminos" class="checkbox-condiciones">
+                        <label for="register-terminos"> Acepto los terminos y condiciones</label>
+                        <input type="button" id="btnRegister2" class="button-registro" value="REGISTRARME">
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <!--LogOut -->
