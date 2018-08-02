@@ -11,27 +11,50 @@
 
 <body>
 
-    <!-- Link de Friends -->
-    <section id="friend" class="hiden">
-        <div class="friend">
+    <header>
+        <img src="../../image/logo.png">
+        <p id="username"></p>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+                <li>
+                    <a href="search.html">Search</a>
+                </li>
+                <li>
+                    <a href="friend.html">Friends</a>
+                </li>
+                <li>
+                    <a href="advertising.html">advertising</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--     <div class="content">
+        <div>
+            <div>Aqui va los amigos</div>
+        </div>
+        <div>Aqui màs usuarios</div>
+        <div>Aqui va publicidad</div>
+    </div> -->
+
+
+    <div class="content">
+        <div>
+            <div>
             <p>Mis amigos</p>
             <input type="button">
         </div>
-        <div class="users">
+        </div>
+        <div>
             <p>Más usuarios</p>
             <input type="button">
         </div>
-        <main>
-            <div class="friend-post">
-                Name User
-                <img src="../image/user.jpg">
-                <textarea></textarea>
-                <input type="button" value="like">
-            </div>
-        </main>
-        <div class="advertising">
+        <div>Aqui va publicidad</div>
         </div>
-    </section>
 
     <!-- Inicializa Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>

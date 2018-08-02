@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,15 @@
     <link rel="stylesheet" href="home.css">
     <title>Home</title>
 </head>
-<img src="../image/logo.png">
-<header>
         
-        <p id="username"></p>
+
+<body>
+
+    <div id="logo">
+        <img src="../../image/logo.png">
+    </div>
+
+    <header>
         <nav class="menu">
             <ul>
                 <li>
@@ -50,16 +56,18 @@
                 Name User
                 <img src="../image/user.jpg">
                 <textarea></textarea>
-                <input type="button" value="like">
+                <input type="button" value="Me gusta">
             </div>
-        </main>
-        <div class="advertising">
         </div>
-    </section>
+
+        <div id="right">
+            <img src="../../image/publicidad.gif">
+            </div>
+        </div>
   
     <!-- Inicializa Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
-    <script src="config.js"></script>
+    <script src="../config.js"></script>
     <script src="home.js"></script>
 </body>
 
