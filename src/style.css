@@ -43,7 +43,7 @@ body{
   text-align: center;
 }
 
-.content-register{
+#content-register{
   background-color: #FFFFFF;
   width: 40%;
   height: 100%;
@@ -120,7 +120,7 @@ input{
     display: none;
   }
     
-  .content-login, .content-register{
+  .content-login, content-register{
     width: 100%;
     height: 100%;
   }

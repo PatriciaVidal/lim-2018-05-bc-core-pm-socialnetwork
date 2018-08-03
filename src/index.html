@@ -11,13 +11,17 @@
 
 <body>
     <!-- Autenticación -->
-    <div class="content">
-        <div class="login">
+    <div id="content" class="content">
+
+        <div id="login" class="login">
+
             <div id="presentación-login" class="presentación-login">
                 <img src="../image/logo.png">
-                <p>Aqui va la presentación del login</p>
+                <p>Happy babies nace como una red social para padres con bebés hasta niños de 5 años, en donde comparten experiencias
+                    para una mejor crianza en los primeros años de vida de nuestros bebés</p>
             </div>
-            <div class="content-login">
+
+            <div class="content-login" class="hiden">
                 <!-- Sección Login -->
                 <div id="section-login" class="hiden">
 
@@ -26,10 +30,12 @@
                         <p>Iniciar Sesión</p>
                     </div>
                     <div>
+                        <p>¿Ya tienes una cuenta?</p>
                         <input type="email" id="email" class="input-email" placeholder="Correo electrónico" required>
                         <input type="password" id="password" class="input-password" placeholder="Contraseña" required>
                         <input type="button" id="btnLogin" class="button-login" value="Ingresar">
                         <br> Ingresar con :
+                        <br>
                         <input type="button" id="btnGoogle" class="button-google" value="google" class="login-google">
                         <input type="button" id="btnFacebook" class="button-facebook" value="facebook" class="login-facebook">
                         <br> - o -
@@ -40,15 +46,16 @@
 
         </div>
 
-        <div id="register" class="hiden" >
+        <div id="register" class="hiden">
             <!-- Sección Registro -->
             <div id="presentación-register" class="hiden">
                 <img src="../image/logo.png">
                 <p>Aqui va la presentación del registro</p>
             </div>
-            <div class="content-register">
-                <div id="section-register" class="hiden">
 
+            <div id="content-register" class="hiden">
+
+                <div id="section-register" class="hiden">
                     <div>
                         <img src="../image/logo.png">
                         <p>Iniciar Sesión</p>
@@ -62,20 +69,22 @@
                         <input type="checkbox" id="register-terminos" class="checkbox-condiciones">
                         <label for="register-terminos"> Acepto los terminos y condiciones</label>
                         <input type="button" id="btnRegister2" class="button-registro" value="REGISTRARME">
+                        <!-- id=register-user -->
                     </div>
                 </div>
             </div>
 
         </div>
 
-        <!--LogOut -->
-        <div id="logout" class="hiden">
-            <p id="username"></p>
-            <input type="button" name="" value="Logout" id="btnLogout">
-        </div>
     </div>
 
-    <div id="section-post">
+    <!--LogOut -->
+    <div id="logout" class="hiden">
+        <p id="username"></p>
+        <input type="button" name="" value="Logout" id="btnLogout">
+    </div>
+
+    <div id="section-post" class="hiden">
         <!-- Base de datos -->
         <div id="bd" class="hiden">
             bd
