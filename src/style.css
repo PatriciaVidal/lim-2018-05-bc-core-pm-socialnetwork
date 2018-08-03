@@ -125,14 +125,45 @@ header{
   width: 25px;
 }
 
-.profile1 img{
+/*.profile1 img{
   border-radius: 50%;  
   width: 50px;  
+}*/
+
+.profile1{
+  width:100px;
+  background-image: url();
+  margin: 0px;
+  padding: 0px;
+  border-radius: 50px;
 }
 
-@font-face{
-
+#post{
+  font-family: "MyriadPro";
+  font-size: 15px;
 }
+
+#post::placeholder{
+  font-family: "MyriadPro";
+  font-style: italic;
+  color:#a3a1a1;
+  font-size: 15px;
+}
+
+#btnSave{
+  background-color: #55a843;
+  color: white;
+}
+
+select {
+  background: transparent;
+  font-family: "MyriadPro";
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 100px;
+}
+
 
 
 
