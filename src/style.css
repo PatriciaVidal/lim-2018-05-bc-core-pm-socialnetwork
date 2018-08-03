@@ -22,7 +22,7 @@ body{
   background-color: #ccc;
 }
 
-#btnLogin{
+#btnLogin, #btnRegister2{
   border-radius: 10px;
   padding: 10px;
   font-weight: 200;
@@ -96,7 +96,7 @@ body{
   text-align: center;
 }
 
-.button-google{
+.login-google{
   width:70px;
   height:70px;
   background-image: url("../image/boton_google.png");
@@ -116,7 +116,7 @@ body{
   filter:alpha (opacity=50);
 }
 
-.button-facebook{
+.login-facebook{
   width:70px;
   height:70px;
   background-image: url("../image/boton-facebook.jpg");
@@ -162,6 +162,9 @@ input{
   font-size: 25px;
 }
 
+.checkbox-condiciones{
+  size:3px;
+}
 
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
