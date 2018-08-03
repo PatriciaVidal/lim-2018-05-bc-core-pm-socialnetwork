@@ -9,10 +9,9 @@ body{
   font-weight: 500;
 }
 
-input{
-  border-radius: 5px;
-  height: 25px;
-  font-family: MyriadPro;
+.content{
+  width: 100%;
+  height: 100%;
 }
 
 .login{
@@ -23,68 +22,83 @@ input{
   background-color: #ccc;
 }
 
-.section-login, #register{
+.presentación-login{
+  width: 60%;  
+  background-color: #EFEEE9;
+  height: 100%;
+  text-align: center;
+}
+
+.content-login{
+  width: 40%;
+  background-color: #FFFFFF;
+  height: 100%;
+}
+
+#register{
+  height: 100%;
+  display: flex;
+}
+
+#presentación-register{
+  background-color: #EFEEE9;
+  width: 60%;
+  height: 100%;
+  text-align: center;
+}
+
+#content-register{
+  background-color: #FFFFFF;
+  width: 40%;
+  height: 100%;
+}
+
+
+#section-login, #section-register{
   width: 300px;
   height: 550px;
   border-radius: 10px;
   background-color:white;
   padding: 25px; 
+  margin: 20px 30px 30px 100px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
 }
 
-.home-general{
-  width: 300px;
-  height: 550px;
-  border-radius: 10px;
-  background-color:white;
-  padding: 25px; 
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
-}
 
-.login-google{
+.button-google{
   width:50px;
   height:50px;
-  background-image: url(../image/google.png);
+  background-image: url();
   margin: 1px;
   padding:5px;
   -moz-border-radius: 50px;
   border-radius: 50px;
 }
-.login-google:hover{
+
+.button-google:hover{
   opacity: 0.50;
   -moz-opacity: .50;
   filter:alpha (opacity=50);
 }
 
-.login-facebook{
+.button-facebook{
   width:50px;
   height:50px;
-  background-image: url(../image/fb.png);
+  background-image: url();
   margin: 1px;
   padding:5px;
   -moz-border-radius: 50px;
   border-radius: 50px;
-
 }
-.login-facebook:hover{
+
+.button-facebook:hover{
   opacity: 0.50;
   -moz-opacity: .50;
   filter:alpha (opacity=50);
 }
 
-.card-new-post, .friend-post {
-  width: 250px;
-  height: 100px;
-  border-radius: 10px;
-  background-color:white;
-  padding: 25px; 
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);  
-}
-
-.section-login:hover, #register:hover{
+#section-login:hover, #section-register:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
@@ -96,6 +110,7 @@ input{
   display: block;
 }
 
+<<<<<<< HEAD
 header
 
 ul, ol {
@@ -167,8 +182,37 @@ select {
 
 
 
+=======
+input{
+  border-radius: 5px;
+  height: 25px;
+  width: 95%;
+  margin: 5px;
+}
+
+>>>>>>> 558a3b8364c42c20e9e5ec2b7be2e1c68f7f5be6
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
+
+  .presentación-login{
+    display: none;
+  }
+    
+  .content-login, content-register{
+    width: 100%;
+    height: 100%;
+  }
+
+  #presentación-register{
+    display: none;
+  }
+
+  input{
+    border-radius: 5px;
+    height: 25px;
+    width: 85%;
+    margin: 5px;
+  }
 
 }
 /* Galaxy Tab 2 y 3 (7.0 pulgadas): 600 x 1024  */

@@ -1,0 +1,194 @@
+html{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+ /*  background-color: chartreuse; */
+}
+
+body{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+#logo{
+  text-align: center;
+}
+
+header{
+  width: 100%;
+  background-color: #A05BA6;
+  height: 40px;
+  position: relative;    
+}
+
+nav{
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+  
+nav li a{
+  background-color: #A05BA6;
+  color: white;
+  text-decoration: none;
+  padding: 5px 25px;
+  display: block;
+  float: left;
+  
+}
+  
+nav li a:hover{
+  background-color: #824787;
+}
+
+.content{
+  width: 100%;
+  display: flex;
+}
+
+.general{
+  width: 75%;
+/*   background-color: yellow; */
+  text-align: left;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.profile{
+  background-color: #E5E3E3;
+  border-radius: 5px;
+  height: 250px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.advertising{
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #E5E3E3;
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.right{
+  width: 25%;
+}
+
+.friend-and-posts{
+  display: flex;
+  
+}
+
+.left{
+  width: 30%;
+  background-color: #E5E3E3;
+  display: inline-block;
+  text-align: left;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.center{
+  width: 70%;
+ /*  background-color: brown; */
+  display: inline-block;
+  border-radius: 5px;
+}
+
+
+.menu-home, .menu-search, .menu-friend, .menu-perfil{
+  width: 25px;
+  
+}
+
+.user-description{
+  width: 90%;
+  height: 35px;
+  background-color: #FFFFFF;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+
+table{
+  height: 350px;
+  width: 95%;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#bd, .personal-post{
+  background-color: #E5E3E3;
+  border-radius: 5px;
+  width: 95%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.textarea-post, .textarea-posts{
+  height: 65px;
+  width: 80%;
+  resize: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .right{
+    display: none;
+  } 
+
+  .profile{
+    background-color: #E5E3E3;
+    border-radius: 5px;
+    height: 250px;
+    margin: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .left{
+    width: 35%;
+  }
+
+  .center{
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+
+  .left, .right, .profile{
+    display: none;
+  } 
+
+  .center{
+    width: 100%;
+  }
+ 
+  .textarea-post, .textarea-posts{
+    height: 65px;
+    width: 80%;
+  }
+
+  nav li a{
+    background-color: #A05BA6;
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    display: block;
+    float: left;
+  }
+
+}
+
+

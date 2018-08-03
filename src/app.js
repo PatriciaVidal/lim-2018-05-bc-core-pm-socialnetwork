@@ -1,36 +1,40 @@
-const login = document.getElementById('section-login');
+const login = document.getElementById('login');
+const sectionLogin = document.getElementById('section-login');
 const logout = document.getElementById('logout');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const btnRegister1 = document.getElementById('btnRegister1')
-const btnRegister2 = document.getElementById('btnRegister2')
-const btnLogin = document.getElementById('btnLogin')
-const btnLogout = document.getElementById('btnLogout')
+const btnRegister1 = document.getElementById('btnRegister1');
+const btnLogin = document.getElementById('btnLogin');
+const btnLogout = document.getElementById('btnLogout');
 const btnFacebook = document.getElementById('btnFacebook');
 const btnGoogle = document.getElementById('btnGoogle');
 const register = document.getElementById('register');
-const usernameRegister = document.getElementById('username-register');
+const sectionRegister = document.getElementById('section-register');
+const nameRegister = document.getElementById('name-register');
+const lastName = document.getElementById('lastname-register');
 const emailRegister = document.getElementById('email-register');
 const passwordRegister1 = document.getElementById('password-register1');
-const passwordRegister2 = document.getElementById('password-register1');
+const passwordRegister2 = document.getElementById('password-register2');
+const registerTerminos = document.getElementById('register-terminos');
+const btnRegister2 = document.getElementById('btnRegister2');
 const bd = document.getElementById('bd');
 const btnSave = document.getElementById('btnSave');
 const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
 // Verificar si tenemos nuestro usuario logueado
-window.onload = () => { 
+window.onload = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log('Usuario Logueado');
       login.classList.add("hiden");
       logout.classList.remove("hiden");
-      username.innerHTML = `Bienvenida ${user.displayName}`;
-      console.log(user);
+      username.innerHTML = `Bienvenid@ ${user.displayName}`;
+      console.log(user.uid);
     } else {
       console.log('Sin usuario');
-      login.classList.remove("hiden");
+      sectionLogin.classList.remove("hiden");
       logout.classList.add("hiden");
     }
   });
@@ -43,16 +47,23 @@ btnRegister1.addEventListener('click', () => {
 
 // Evento que registra a un nuevo usuario
 btnRegister2.addEventListener('click', () => {
-  register.classList.add("hiden");
- logout.classList.remove("hiden");
-  window.location.assign("content.html");
+
+
   firebase.auth().createUserWithEmailAndPassword(emailRegister.value, passwordRegister1.value)
     .then(() => {
-      console.log('Usuario Creado');
+      var user = firebase.auth().currentUser; //accede al usuario que se registro
+
+      console.log(user);
+      //logout.classList.remove("hiden");
+      //console.log(data);
+      register.classList.add("hiden");
+
     })
     .catch(function (error) {
       console.log(error.code, ' : ', error.message);
     });
+
+
 })
 
 // Evento que permite entrar a la red social usando correo y contraseña
@@ -60,8 +71,9 @@ btnLogin.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(() => {
       console.log('Verificado')
-      login.classList.add("hiden");
-      logout.classList.remove("hiden");
+      //sectionLogin.classList.add("hiden");
+      // logout.classList.remove("hiden");
+      window.location.assign("../home/home.html");
     })
     .catch(function (error) {
       console.log('Contraseña Incorrecta')
@@ -89,9 +101,10 @@ btnFacebook.addEventListener('click', () => {
     'display': 'popup'
   });
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) { 
+    .then(function (result) {
       console.log('Logueado con Fb')
-     })
+      window.location.assign("../home/home.html");
+    })
     .catch(function (error) {
       console.log(error.code);
       console.log(error.message);
@@ -110,9 +123,10 @@ btnGoogle.addEventListener('click', () => {
   var provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider)
-    .then(function (result) { 
-      console.log('Login Google')
-     })
+    .then(function (result) {
+      console.log('Login Google');
+      window.location.assign("../home/home.html");
+    })
     .catch(function (error) {
       console.log(error.code);
       console.log(error.message);
@@ -121,3 +135,98 @@ btnGoogle.addEventListener('click', () => {
     });
 
 });
+
+
+
+
+
+
+
+
+function writeUserData(userId, name, email, imageUrl) {
+  console.log('mostrar ')
+  firebase.database().ref('users/' + userId).set({
+    name: name,
+    email: email,
+    profile_picture: imageUrl
+  });
+}
+
+
+//Función escribir nuevo Post
+function writeNewPost(uid, body) {
+  // A post entry.
+  var postData = {
+    uid: uid,
+    body: body,
+  };
+
+  // Get a key for a new Post.
+  var newPostKey = firebase.database().ref().child('posts').push().key;
+
+  // Write the new post's data simultaneously in the posts list and the user's post list.
+  var updates = {};
+  updates['/posts/' + newPostKey] = postData;
+  updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+  firebase.database().ref().update(updates);
+  return newPostKey;
+}
+
+//Boton Guardar
+btnSave.addEventListener('click', () => {
+  var userId = firebase.auth().currentUser.uid;
+  const newPost = writeNewPost(userId, post.value);
+
+  var btnUpdate = document.createElement("input");
+  btnUpdate.setAttribute("value", "Update");
+  btnUpdate.setAttribute("type", "button");
+  var btnDelete = document.createElement("input");
+  btnDelete.setAttribute("value", "Delete");
+  btnDelete.setAttribute("type", "button");
+  var contPost = document.createElement('div');
+  var textPost = document.createElement('textarea')
+  textPost.setAttribute("id", newPost);
+
+  textPost.innerHTML = post.value;
+  //Boton eliminar
+  btnDelete.addEventListener('click', () => {
+
+    firebase.database().ref().child('/user-posts/' + userId + '/' + newPost).remove();
+    firebase.database().ref().child('posts/' + newPost).remove();
+
+    while (posts.firstChild) posts.removeChild(posts.firstChild);
+
+    alert('The user is deleted successfully!');
+    reload_page();
+
+  });
+  //boton actualizar
+  btnUpdate.addEventListener('click', () => {
+    const newUpdate = document.getElementById(newPost);
+    const nuevoPost = {
+      body: newUpdate.value,
+    };
+
+    var updatesUser = {};
+    var updatesPost = {};
+
+    updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
+    updatesPost['/posts/' + newPost] = nuevoPost;
+
+    firebase.database().ref().update(updatesUser);
+    firebase.database().ref().update(updatesPost);
+
+  });
+
+  contPost.appendChild(textPost);
+  contPost.appendChild(btnUpdate);
+  contPost.appendChild(btnDelete);
+  posts.appendChild(contPost);
+})
+
+
+
+
+
+
