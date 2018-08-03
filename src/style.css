@@ -117,6 +117,14 @@ input{
   margin: 5px;
 }
 
+#presentación-login, #presentación-register{
+  color: #A05BA6;
+  font-family: "MyriadPro";
+  font-style: italic;
+  font-size: 25px;
+}
+
+
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
 
@@ -140,6 +148,7 @@ input{
     margin: 5px;
   }
 
+ 
 }
 /* Galaxy Tab 2 y 3 (7.0 pulgadas): 600 x 1024  */
 @media only screen and (max-width:600px){
