@@ -1,8 +1,12 @@
+@import url("../tipografia/fonts.css");
+
 body{
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
+  font-family: MyriadPro;
+  font-weight: 500;
 }
 
 .content{
