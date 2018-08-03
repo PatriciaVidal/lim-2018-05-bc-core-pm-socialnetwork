@@ -28,16 +28,23 @@
             <div class="content-login" class="hiden">
                 <!-- Sección Login -->
                 <div id="section-login" class="hiden">
+                    <br>
+                    <br>
                     <div>
                         <p>¿Ya tienes una cuenta?</p>
                         <input type="email" id="email" class="input-email" placeholder="Correo electrónico" required>
                         <input type="password" id="password" class="input-password" placeholder="Contraseña" required>
                         <input type="button" id="btnLogin" class="button-login" value="Ingresar">
+                        <br>
                         <br> Ingresar con :
                         <br>
-                        <input type="button" id="btnGoogle" class="button-google" value="google" class="login-google">
-                        <input type="button" id="btnFacebook" class="button-facebook" value="facebook" class="login-facebook">
-                        <br> - o -
+                        <div id="botoncitos">
+                          <input type="button" id="btnGoogle"  value="" class="login-google">
+                          <input type="button" id="btnFacebook" value="" class="login-facebook">
+                        <br> 
+                        <br>- o -
+                        </div>
+                        <br>
                         <input type="button" id="btnRegister1" class="button-registrarse" value="Quiero registrarme">
                     </div>
                 </div>
@@ -58,7 +65,8 @@
 
             <div id="content-register" class="hiden">
 
-                <div id="section-register" class="hiden">
+                <div id="section-register" class="">
+                    
                     <div>
                         <input type="text" id="name-register" class="input-name" placeholder="Nombre">
                         <input type="text" id="lastname-register" class="input-lastname" placeholder="Apellidos">
