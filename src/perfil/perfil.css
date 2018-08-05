@@ -1,9 +1,12 @@
+@import url("../tipografia/fonts.css");
+
 html{
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
+  font-family: 'MyriadPro';
  /*  background-color: chartreuse; */
 }
 
@@ -11,6 +14,8 @@ body{
   width: 100%;
   padding: 0px;
   margin: 0px;
+  font-family: MyriadPro;
+  font-weight: 500;
 }
 
 #logo{
@@ -26,10 +31,12 @@ header{
 
 nav{
   width: 100%;
+  font-family: MyriadPro;
 }
 
 ul {
   list-style: none;
+  font-family: MyriadPro;
 }
   
 nav li a{
@@ -39,7 +46,7 @@ nav li a{
   padding: 5px 25px;
   display: block;
   float: left;
-  
+  font-family: MyriadPro;
 }
   
 nav li a:hover{
@@ -49,6 +56,7 @@ nav li a:hover{
 .content{
   width: 100%;
   display: flex;
+  font-family: MyriadPro;
 }
 
 .general{
@@ -58,6 +66,7 @@ nav li a:hover{
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
+  font-family: MyriadPro;
 }
 
 .profile{
@@ -66,6 +75,7 @@ nav li a:hover{
   height: 250px;
   margin: 10px;
   padding: 5px;
+  font-family: MyriadPro;
 }
 
 .advertising{
@@ -75,6 +85,7 @@ nav li a:hover{
   text-align: center;
   margin: 10px;
   padding: 5px;
+  font-family: MyriadPro;
 }
 
 .right{
@@ -83,7 +94,7 @@ nav li a:hover{
 
 .friend-and-posts{
   display: flex;
-  
+  font-family: MyriadPro;
 }
 
 .left{
@@ -106,7 +117,7 @@ nav li a:hover{
 
 .menu-home, .menu-search, .menu-friend, .menu-perfil{
   width: 25px;
-  
+  font-family: MyriadPro;
 }
 
 .user-description{
@@ -116,6 +127,7 @@ nav li a:hover{
   margin: 10px;
   border-radius: 5px;
   border: none;
+  font-family: MyriadPro;
 }
 
 

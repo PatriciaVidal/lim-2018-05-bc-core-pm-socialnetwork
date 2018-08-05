@@ -226,7 +226,31 @@ btnSave.addEventListener('click', () => {
 })
 
 
+//Validación de correo
+document.getElementById('email').addEventListener('input', () => {
+  campo = event.target;
+  valido = document.getElementById('emailOK');
+      
+  emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+  if (emailRegex.test(campo.value)) {
+    valido.innerText = "válido";
+  } else {
+    valido.innerText = "Por favor escribe correctamente tu correo.";
+  } 
+});
 
+//Validación de contraseña
+document.getElementById('password').addEventListener('input', () => {
+  campo = event.target;
+  valido = document.getElementById('passwordOK');
+      
+  emailRegex = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/i;
 
+  if (emailRegex.test(campo.value)) {
+    valido.innerText = "contraseña segura";
+  } else {
+    valido.innerText = "(Entre 8 y 10 caracteres de números y letras)";
+  } 
+});
 

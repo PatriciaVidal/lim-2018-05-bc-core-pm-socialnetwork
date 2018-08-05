@@ -167,6 +167,18 @@ input{
   size:3px;
 }
 
+/*Validación correo*/
+.innerText{
+color: #35ba57;
+font-size: 15px;
+}
+
+/*Validación contraseña*/
+.innerText2{
+  color: #35ba57;
+  font-size: 15px;
+  }
+
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
 
