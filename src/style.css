@@ -14,7 +14,7 @@ body{
   height: 100%;
 }
 
-.login{
+#login{
   height: 100%;
   display: flex;
   align-items: center;
@@ -22,7 +22,7 @@ body{
   background-color: #ccc;
 }
 
-.presentación-login{
+#presentación-login{
   width: 60%;  
   background-color: #EFEEE9;
   height: 100%;
@@ -120,7 +120,7 @@ input{
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
 
-  .presentación-login{
+  #presentación-login{
     display: none;
   }
     
