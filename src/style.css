@@ -169,13 +169,13 @@ input{
 
 /*Validación correo*/
 .innerText{
-color: #35ba57;
-font-size: 15px;
+color: red;
+font-size: red;
 }
 
 /*Validación contraseña*/
 .innerText2{
-  color: #35ba57;
+  color: red;
   font-size: 15px;
   }
 
