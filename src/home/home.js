@@ -8,7 +8,6 @@ window.onload = () => {
             console.log(user.uid);
         } else {
             console.log('Sin usuario');
-            login.classList.remove("hiden");
             logout.classList.add("hiden");
         }
     });

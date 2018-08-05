@@ -51,7 +51,6 @@ registerUser.addEventListener('click', () => {
   firebase.auth().createUserWithEmailAndPassword(emailRegister.value, passwordRegister1.value)
     .then(() => {
       var user = firebase.auth().currentUser; //accede al usuario que se registro
-
       console.log(user);
       logout.classList.remove("hiden");
       //console.log(data);
@@ -70,9 +69,10 @@ btnLogin.addEventListener('click', () => {
   firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then(() => {
       console.log('Verificado')
-
       logout.classList.remove("hiden");
       window.location.assign("home/home.html");
+      username.innerHTML = "";
+      email.innerHTML = "";
     })
     .catch(function (error) {
       console.log('Contraseña Incorrecta')
@@ -94,8 +94,6 @@ btnLogout.addEventListener('click', () => {
 // evento que permite iniciar sesion con una cuenta de Facebook
 btnFacebook.addEventListener('click', () => {
 
-  logout.classList.remove("hiden");
-  window.location.assign("home/home.html");
   var provider = new firebase.auth.FacebookAuthProvider();
   provider.setCustomParameters({
     'display': 'popup'
@@ -103,7 +101,9 @@ btnFacebook.addEventListener('click', () => {
   firebase.auth().signInWithPopup(provider)
     .then(function (result) {
       console.log('Logueado con Fb')
-      //window.location.assign("home/home.html");
+      logout.classList.remove("hiden");
+      window.location.assign("home/home.html");
+
     })
     .catch(function (error) {
       console.log(error.code);
@@ -111,21 +111,19 @@ btnFacebook.addEventListener('click', () => {
       console.log(error.email);
       console.log(error.credential);
     });
-  username.innerHTML = "";
-  email.innerHTML = "";
+
 })
 
 // evento que permite iniciar sesion con una cuenta de google
 btnGoogle.addEventListener('click', () => {
 
-  logout.classList.remove("hiden");
-  window.location.assign("home/home.html");
   var provider = new firebase.auth.GoogleAuthProvider();
 
   firebase.auth().signInWithPopup(provider)
     .then(function (result) {
       console.log('Login Google');
-      //window.location.assign("home/home.html");
+      logout.classList.remove("hiden");
+      window.location.assign("home/home.html");
     })
     .catch(function (error) {
       console.log(error.code);
