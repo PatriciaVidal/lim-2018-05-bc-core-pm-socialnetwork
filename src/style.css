@@ -97,10 +97,10 @@ body{
 }
 
 .login-google{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   background-image: url("../image/boton_google.png");
-  background-size: 70px;
+  background-size: 60px;
   background-repeat:no-repeat;
   margin: 0px;
   padding:0px;
@@ -117,10 +117,10 @@ body{
 }
 
 .login-facebook{
-  width:70px;
-  height:70px;
+  width:60px;
+  height:60px;
   background-image: url("../image/boton-facebook.jpg");
-  background-size: 70px;
+  background-size: 60px;
   background-repeat:no-repeat;
   margin: 0px;
   padding:0px;

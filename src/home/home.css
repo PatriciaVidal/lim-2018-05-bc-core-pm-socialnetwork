@@ -1,9 +1,12 @@
+@import url("../tipografia/fonts.css");
+
 html{
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
+  font-family: MyriadPro;
  /*  background-color: chartreuse; */
 }
 
@@ -11,6 +14,7 @@ body{
   width: 100%;
   padding: 0px;
   margin: 0px;
+  font-family: MyriadPro;
 }
 
 #logo{
@@ -49,6 +53,7 @@ nav li a:hover{
 .content{
   width: 100%;
   display: flex;
+  font-family: MyriadPro;
 }
 
 .left{
