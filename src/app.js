@@ -5,6 +5,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const btnRegister1 = document.getElementById('btnRegister1');
+const btnRegister2 = document.getElementById('btnRegister2');
 const btnLogin = document.getElementById('btnLogin');
 const btnLogout = document.getElementById('btnLogout');
 const btnFacebook = document.getElementById('btnFacebook');
