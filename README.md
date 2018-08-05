@@ -155,17 +155,19 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
 
 
 *  **Resumen de entrevistas con usuarios.**<br>
-    En la entrevista realizada, notamos que a los usuarios realmente les es útil tener un contacto directo no solo con personas que esten en la misma etapa si no también con profesionales de la salud, como pediatras quienes podrían instruir mejor sobre el cuidado del bebé, y no solo tomar en cuenta los concejos de familiares y amistades, que a veces pueden influir en no tomar decisiones no muy favorables para el bienestar del bebé.
+    + En la entrevista realizada, notamos que a los usuarios realmente les es útil tener un contacto directo no solo con personas que esten en la misma etapa si no también con profesionales de la salud, como pediatras quienes podrían instruir mejor sobre el cuidado del bebé, y no solo tomar en cuenta los concejos de familiares y amistades, que a veces pueden influir en no tomar decisiones no muy favorables para el bienestar del bebé.
 
     Aquí link del audio de la entrevista realizada [Entrevista](https://soundcloud.com/patricia-vidal-136075208/encuesta-audio)
 
 
 *  **Conclusiones de testing con el prototipo de alta fidelidad con usuarios.**<br>
-    Notamos que el usuario por lo general tiende a entrar con su cuenta de facebook a una nueva app para evitar estar registrandose ya que lo ven tedioso escribir el correo y contraseña.
-    ![test](image/test_prototipo.jpeg)
-    Uno de los comentarios que recibimos como feedback fue el de retirar en el index (el momento de ingresar a la app)un logo ya que habian 2 y visualmente dieron a entender que una sola vez bastaba para tomar en cuenta de que se trataba.
+    + Notamos que el usuario por lo general tiende a entrar con su cuenta de facebook a una nueva app para evitar estar registrandose ya que lo ven tedioso escribir el correo y contraseña.<br>
 
-*  **Conclusiones de testing con el producto en HTML.**
+    ![test](image/test_prototipo.jpeg)<br>
+
+    Uno de los comentarios que recibimos como feedback fue el de retirar en el index (el momento de ingresar a la app) un logo ya que habian 2 y visualmente dieron a entender que una sola vez bastaba para tomar en cuenta de que se trataba.<br>
+
+    Aquí link del video del test con el prototipo web al usuario [TestPrototipo](https://youtu.be/xQ4Qgik_mnU)
     
 
 ### Presentación en plataformas digitales (celular, tablet y vista web)
@@ -205,5 +207,5 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
 * [ ] Permite dar _like_ a los posts y llevar un conteo de ellos.
 
 
-**Gracias por leer hasta el final!**
+**Gracias por leer hasta el final.**
   
