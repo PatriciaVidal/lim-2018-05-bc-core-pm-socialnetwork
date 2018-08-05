@@ -154,6 +154,9 @@ input[type="email"], input[type="password"], input[type="text"]{
     display: block;
 }
 
+
+
+
 /* Galaxy S3, S4, S5: 360 x 640  */
 @media only screen and (max-width: 360px) {
 
