@@ -24,8 +24,8 @@ window.onload = () => {
 btnLogout.addEventListener('click', () => {
     firebase.auth().signOut().then(function () {
         console.log('Cerró Sesión');
-       goToLogin();
-        
+        goToLogin();
+
     }).catch(function (error) {
         console.log('Error al cerrar Sesión');
     });
@@ -40,11 +40,11 @@ btnLogout.addEventListener('click', () => {
 // social de blogs puede agregar un usuario con set() de la siguiente manera:
 function writeUserData(userId, name, email, imageUrl) {
     firebase.database().ref('users/' + userId).set({
-      //Valores que se van a crear en la BD
-      username: name, 
-      email: email,
-      profile_picture : imageUrl,
-      github: name,
+        //Valores que se van a crear en la BD
+        username: name,
+        email: email,
+        profile_picture: imageUrl,
+        github: name,
     });
 }
 // 7. Función para escribir post
@@ -53,12 +53,12 @@ function writeUserData(userId, name, email, imageUrl) {
 function writeNewPost(uid, body) {
     // A post entry.
     var postData = {
-      uid: uid,
-      body: body,
+        uid: uid,
+        body: body,
     };
-   
+
     //8. Get a key for a new Post.
-    var newPostKey = firebase.database().ref().child('posts').push().key;  
+    var newPostKey = firebase.database().ref().child('posts').push().key;
 
     //9. Write the new post's data simultaneously in the posts list and the user's post list.
     //updates : objeto vacio
@@ -80,8 +80,6 @@ btnSave.addEventListener('click', () => {
     //llamando a funcion writeNewPost y guarda en variable.
     const newPost = writeNewPost(userId, post.value );
   
-    var sectionDiv = document.createElement('div');
-
     //creando boton actulizar.
     var btnUpdate = document.createElement("input");
     //seteando atributos al botón
@@ -93,47 +91,48 @@ btnSave.addEventListener('click', () => {
     btnDelete.setAttribute("value", "Delete");
     btnDelete.setAttribute("type", "button");
     var contPost = document.createElement('div');
-    var textPost = document.createElement('textarea');
+    var textPost = document.createElement('textarea')
     textPost.setAttribute("id", newPost);
+
+
 
     textPost.innerHTML = post.value; // aqui usamos etiqueta POST
     
-
     //11. evento borrar.
     btnDelete.addEventListener('click', () => {
-  
-      firebase.database().ref().child('/user-posts/' + userId + '/' + newPost).remove();
-      firebase.database().ref().child('posts/' + newPost).remove();
-  
+
+        firebase.database().ref().child('/user-posts/' + userId + '/' + newPost).remove();
+        firebase.database().ref().child('posts/' + newPost).remove();
+
         /* aqui usamos la etiqueta POSTS */
 
-      while(posts.firstChild) posts.removeChild(posts.firstChild);
-  
-      alert('The user is deleted successfully!');
-      reload_page();
-  
+        while (posts.firstChild) posts.removeChild(posts.firstChild);
+
+        alert('The user is deleted successfully!');
+        reload_page();
+
     });
     //12.Evento actualizar
     btnUpdate.addEventListener('click', () => {
-      const newUpdate = document.getElementById(newPost);
-      const nuevoPost = {
-        body: newUpdate.value,
-      };
-  
-      var updatesUser = {};
-      var updatesPost = {};
-  
-      updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
-      updatesPost['/posts/' + newPost ] = nuevoPost;
-  
-      firebase.database().ref().update(updatesUser);
-      firebase.database().ref().update(updatesPost);
-      
+        const newUpdate = document.getElementById(newPost);
+        const nuevoPost = {
+            body: newUpdate.value,
+        };
+
+        var updatesUser = {};
+        var updatesPost = {};
+
+        updatesUser['/user-posts/' + userId + '/' + newPost] = nuevoPost;
+        updatesPost['/posts/' + newPost] = nuevoPost;
+
+        firebase.database().ref().update(updatesUser);
+        firebase.database().ref().update(updatesPost);
+
     });
-  
+
     contPost.appendChild(textPost);
-    contPost.appendChild(btnUpdate );
+    contPost.appendChild(btnUpdate);
     contPost.appendChild(btnDelete);
-    posts.appendChild(contPost);   
+    posts.appendChild(contPost);
     /* aqui usamos la etiqueta POSTS */
-  })
+})
