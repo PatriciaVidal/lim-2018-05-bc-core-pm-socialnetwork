@@ -1,16 +1,19 @@
+@import url("../tipografia/fonts.css");
+
 html{
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
- /*  background-color: chartreuse; */
 }
 
 body{
   width: 100%;
   padding: 0px;
   margin: 0px;
+  font-family: MyriadPro;
+  font-style: italic;
 }
 
 #logo{
@@ -22,6 +25,12 @@ header{
   background-color: #A05BA6;
   height: 40px;
   position: relative;    
+}
+
+textarea{
+  font-family: MyriadPro;
+  font-style: italic;
+  font-size: 15px;
 }
 
 nav{
