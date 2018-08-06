@@ -41,7 +41,12 @@ nav li a{
   float: left;
   
 }
-  
+
+#logout{
+  float: right;
+  padding: 6.5px;
+}
+
 nav li a:hover{
   background-color: #824787;
 }
@@ -104,7 +109,7 @@ nav li a:hover{
 }
 
 
-.menu-home, .menu-search, .menu-friend, .menu-perfil{
+.menu-home, .menu-search, .menu-friend, .menu-perfil, .menu-logout{
   width: 25px;
   
 }

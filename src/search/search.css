@@ -43,6 +43,11 @@ nav li a{
   
 }
   
+#logout{
+  float: right;
+  padding: 6.5px;
+}
+
 nav li a:hover{
   background-color: #824787;
 }
@@ -80,7 +85,7 @@ nav li a:hover{
   width: 20%;
 }
 
-.menu-home, .menu-search, .menu-friend, .menu-perfil{
+.menu-home, .menu-search, .menu-friend, .menu-perfil, .menu-logout{
   width: 25px;
   
 }

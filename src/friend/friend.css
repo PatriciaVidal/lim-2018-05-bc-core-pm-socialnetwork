@@ -22,7 +22,6 @@ header{
   background-color: #A05BA6;
   height: 40px;
   position: relative;  
-  
 }
 
 nav{
@@ -45,6 +44,11 @@ nav li a{
   
 nav li a:hover{
   background-color: #824787;
+}
+
+#logout{
+  float: right;
+  padding: 6.5px;
 }
 
 .content{
@@ -79,7 +83,7 @@ nav li a:hover{
 .right{
   width: 25%;
 }
-.menu-home, .menu-search, .menu-friend, .menu-perfil{
+.menu-home, .menu-search, .menu-friend, .menu-perfil, .menu-logout{
   width: 25px;  
 }
 
