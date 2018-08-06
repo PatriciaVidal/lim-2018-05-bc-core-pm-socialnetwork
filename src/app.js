@@ -54,11 +54,11 @@ btnSave.addEventListener('click', () => {
   photoUser.setAttribute('src','../../image/user.jpg');
 
   var btnUpdate = document.createElement("input");
-  btnUpdate.setAttribute("value", "Update");
+  btnUpdate.setAttribute("value", "Editar");
   btnUpdate.setAttribute("type", "button");
 
   var btnDelete = document.createElement("input");
-  btnDelete.setAttribute("value", "Delete");
+  btnDelete.setAttribute("value", "Eliminar");
   btnDelete.setAttribute("type", "button");
 
   const btnLike = document.createElement('input');
@@ -72,7 +72,7 @@ btnSave.addEventListener('click', () => {
   textPost.setAttribute('class','textarea-post');
   textPost.setAttribute("id", newPost);
 
-  
+
   textPost.innerHTML = post.value;
   //Boton eliminar
   btnDelete.addEventListener('click', () => {
