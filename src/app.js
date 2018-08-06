@@ -291,7 +291,7 @@ document.getElementById('password-register1').addEventListener('input', () => {
   function validaCheckbox(){
     const checked = checkbox.checked;
     if(checked){
-      valido.innerText ='checkbox está seleccionado';
+      valido.innerText ='checkbox está seleccionado'; 
     }
   }
 
