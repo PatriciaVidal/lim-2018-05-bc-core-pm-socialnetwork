@@ -8,8 +8,7 @@ window.onload = () => {
             console.log(user.uid);
         } else {
             console.log('Sin usuario');
-            login.classList.remove("hiden");
-            logout.classList.add("hiden");
+            goToLogin();
         }
     });
 }
@@ -18,8 +17,7 @@ window.onload = () => {
 btnLogout.addEventListener('click', () => {
     firebase.auth().signOut().then(function () {
         console.log('Cerró Sesión');
-        logout.classList.add("hiden");
-        window.location.assign("../index.html");
+        goToLogin()
     }).catch(function (error) {
         console.log('Error al cerrar Sesión');
     });

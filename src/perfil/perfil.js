@@ -2,6 +2,9 @@ const userNameProfile = document.getElementById('user-name-profile');
 const userNamePost = document.getElementById('user-name-post');
 const logout = document.getElementById('logout');
 const btnSave = document.getElementById('btnSave');
+const bd = document.getElementById("bd");
+const post = document.getElementById("post");
+const posts  = document.getElementById("posts");
 
 
 // Verificar si tenemos nuestro usuario logueado
@@ -94,9 +97,9 @@ btnSave.addEventListener('click', () => {
     var textPost = document.createElement('textarea')
     textPost.setAttribute("id", newPost);
 
-
-
     textPost.innerHTML = post.value; // aqui usamos etiqueta POST
+    
+ 
     
     //11. evento borrar.
     btnDelete.addEventListener('click', () => {
