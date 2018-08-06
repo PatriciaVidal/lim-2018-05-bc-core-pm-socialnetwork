@@ -5,6 +5,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const btnRegister1 = document.getElementById('btnRegister1');
+const btnRegister2 = document.getElementById('btnRegister2');
 const btnLogin = document.getElementById('btnLogin');
 const btnLogout = document.getElementById('btnLogout');
 const btnFacebook = document.getElementById('btnFacebook');
@@ -248,9 +249,34 @@ document.getElementById('password').addEventListener('input', () => {
   emailRegex = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/i;
 
   if (emailRegex.test(campo.value)) {
-    valido.innerText = "contraseña segura";
+    valido.innerText = "Contraseña segura";
   } else {
-    valido.innerText = "(Entre 8 y 10 caracteres de números y letras)";
+    valido.innerText = "La contraseña que ingresaste es incorrecta. ";
   } 
 });
+//validando registro usuario : correo:
+document.getElementById('email-register').addEventListener('input', () => {
+  campo = event.target;
+  valido = document.getElementById('email-registerOk');
+      
+  emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
+  if (emailRegex.test(campo.value)) {
+    valido.innerText = "válido";
+  } else {
+    valido.innerText = "Ingresa una dirección de correo electrónico válido";
+  } 
+});
+//Validadndo registro usuario : pasword
+document.getElementById('password-register1').addEventListener('input', () => {
+  campo = event.target;
+  valido = document.getElementById('password-register1Ok');
+      
+  emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+  if (emailRegex.test(campo.value)) {
+    valido.innerText = "La ontraseña es segura";
+  } else {
+    valido.innerText = "La contraseña debe tener al menos 6 caracteres. Prueba con otra.";
+  } 
+});
