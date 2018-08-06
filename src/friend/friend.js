@@ -8,8 +8,7 @@ window.onload = () => {
             console.log(user.uid);
         } else {
             console.log('Sin usuario');
-            login.classList.remove("hiden");
-            logout.classList.add("hiden");
+            goToLogin();
         }
     });
 }
@@ -24,3 +23,4 @@ btnLogout.addEventListener('click', () => {
         console.log('Error al cerrar Sesión');
     });
 })
+

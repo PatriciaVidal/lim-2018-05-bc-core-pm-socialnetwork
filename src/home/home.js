@@ -8,7 +8,7 @@ window.onload = () => {
             console.log(user.uid);
         } else {
             console.log('Sin usuario');
-            logout.classList.add("hiden");
+            goToLogin();
         }
     });
 }
@@ -18,7 +18,7 @@ btnLogout.addEventListener('click', () => {
     firebase.auth().signOut().then(function () {
         console.log('Cerró Sesión');
         logout.classList.add("hiden");
-        window.location.assign("../index.html");
+        goToLogin();
     }).catch(function (error) {
         console.log('Error al cerrar Sesión');
     });
