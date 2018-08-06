@@ -47,7 +47,11 @@ nav li a{
 
 #logout{
   float: right;
-  padding: 6.5px;
+  padding: 10px 50px;
+  color: white;
+  font-family: 'Helvetica';
+  font-style: oblique;
+  cursor: pointer;
 }
 
 .menu-logout{
