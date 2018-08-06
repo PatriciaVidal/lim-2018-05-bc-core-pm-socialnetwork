@@ -4,7 +4,8 @@ window.onload = () => {
         if (user) {
             console.log('Usuario Logueado');
             logout.classList.remove("hiden");
-            /*  username.innerHTML = `Bienvenid@ ${user.displayName}`; */
+            userNameProfile.innerHTML = `${user.displayName}`;
+            userNamePost.innerHTML = `${user.displayName}`;
             console.log(user.uid);
         } else {
             console.log('Sin usuario');

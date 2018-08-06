@@ -1,8 +1,15 @@
+const userNameProfile = document.getElementById('user-name-profile');
+const userNamePost = document.getElementById('user-name-post');
+const logout = document.getElementById('logout');
+const btnSave = document.getElementById('btnSave');
+const bd = document.getElementById("bd");
+const post = document.getElementById("post");
+const posts  = document.getElementById("posts");
+
 
 goToLogin = () => {
   window.location.assign("../index.html");
 }
-
 
 
 function writeUserData(userId, name, email, imageUrl) {
@@ -40,16 +47,32 @@ btnSave.addEventListener('click', () => {
   var userId = firebase.auth().currentUser.uid;
   const newPost = writeNewPost(userId, post.value);
 
+  const nameUsers = document.createElement('p');
+  nameUsers.setAttribute('id','user-name-post');
+
+  const photoUser = document.createElement('img');
+  photoUser.setAttribute('src','../../image/user.jpg');
+
   var btnUpdate = document.createElement("input");
   btnUpdate.setAttribute("value", "Update");
   btnUpdate.setAttribute("type", "button");
+
   var btnDelete = document.createElement("input");
   btnDelete.setAttribute("value", "Delete");
   btnDelete.setAttribute("type", "button");
+
+  const btnLike = document.createElement('input');
+  btnLike.setAttribute("value", "Me gusta");
+  btnLike.setAttribute("type", "button");
+
   var contPost = document.createElement('div');
-  var textPost = document.createElement('textarea')
+  contPost.setAttribute('class','friend-post');
+
+  var textPost = document.createElement('textarea');
+  textPost.setAttribute('class','textarea-post');
   textPost.setAttribute("id", newPost);
 
+  
   textPost.innerHTML = post.value;
   //Boton eliminar
   btnDelete.addEventListener('click', () => {
@@ -81,9 +104,12 @@ btnSave.addEventListener('click', () => {
 
   });
 
+  contPost.appendChild(nameUsers);
+  contPost.appendChild(photoUser);
   contPost.appendChild(textPost);
   contPost.appendChild(btnUpdate);
   contPost.appendChild(btnDelete);
+  contPost.appendChild(btnLike);
   posts.appendChild(contPost);
 })
 
