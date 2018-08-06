@@ -154,6 +154,11 @@ input[type="email"], input[type="password"], input[type="text"]{
     display: block;
 }
 
+/*Validación correo y contraseña */
+span{
+  color: #e52727;
+  font-size: 15px;
+}
 
 
 
