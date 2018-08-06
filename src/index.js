@@ -95,3 +95,74 @@ btnGoogle.addEventListener('click', () => {
             console.log(error.credential);
         });
 });
+
+
+//LOGIN validación correo 
+document.getElementById('email').addEventListener('input',() => {
+    campo = event.target;
+    valido = document.getElementById('emailOK');
+        
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Válido";
+    } else {
+      valido.innerText = "Por favor escribe correctamente tu correo";
+    }
+  });
+  
+  
+  //REGISTER validación correo 
+  document.getElementById('email-register').addEventListener('input',() => {
+    campo = event.target;
+    valido = document.getElementById('emailOK2');
+        
+    emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Válido";
+    } else {
+      valido.innerText = "Por favor escribe correctamente tu correo";
+    }
+  });
+  
+  
+  //LOGIN validación contraseña
+  document.getElementById('password').addEventListener('input', () => {
+    campo = event.target;
+    valido = document.getElementById('passwordOK');
+        
+    emailRegex = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/i;
+  
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Contraseña segura";
+    } else {
+      valido.innerText = "Mínimo 8 caracteres entre números y letras";
+    }
+  });
+  
+  //REGISTER validación contraseña
+  document.getElementById('password-register1').addEventListener('input', () => {
+    campo = event.target;
+    valido = document.getElementById('passwordOK2');
+        
+    emailRegex = /(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/i;
+  
+    if (emailRegex.test(campo.value)) {
+      valido.innerText = "Contraseña segura";
+    } else {
+      valido.innerText = "Mínimo 8 caracteres entre números y letras";
+    }
+  });
+  
+  //Checkbox 
+  //if(document.getElementById("myCheck").checked === true){
+    const checkbox = document.getElementById('register-terminos');
+    checkbox.addEventListener("change", validaCheckbox, false);
+      valido = document.getElementById("checkboxOK");
+    function validaCheckbox(){
+      const checked = checkbox.checked;
+      if(checked){
+        valido.innerText ='checkbox está seleccionado'; 
+      }
+    }

@@ -41,7 +41,7 @@ ul {
   list-style: none;
 }
   
-nav li a, .menu-logout{
+nav li a{
   background-color: #A05BA6;
   color: white;
   text-decoration: none;
@@ -56,7 +56,11 @@ nav li a, .menu-logout{
   padding: 6.5px;
 }
 
-nav li a:hover{
+.menu-logout{
+  width: 23px;
+}
+
+nav li a:hover, .menu-logout:hover{
   background-color: #824787;
 }
 
@@ -118,7 +122,7 @@ nav li a:hover{
 }
 
 
-.menu-home, .menu-search, .menu-friend, .menu-perfil, .menu-logout{
+.menu-home, .menu-search, .menu-friend, .menu-perfil{
   width: 25px;
   
 }

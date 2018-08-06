@@ -35,24 +35,27 @@ nav{
 ul {
   list-style: none;
 }
-  
-nav li a, .menu-logout{
+
+nav li a{
   background-color: #A05BA6;
   color: white;
   text-decoration: none;
   padding: 5px 25px;
   display: block;
-  float: left;
-  
-}
-  
-nav li a:hover{
-  background-color: #824787;
+  float: left;  
 }
 
 #logout{
   float: right;
   padding: 6.5px;
+}
+
+.menu-logout{
+  width: 23px;
+}
+
+nav li a:hover, .menu-logout:hover{
+  background-color: #824787;
 }
 
 .content{

@@ -53,7 +53,7 @@
         <div class="general">
             <div class="profile">
                 <img src="../../image/user.jpg">
-                <p>Nombre </p>
+                <p id="user-name-profile"></p>
                 <p>Amigos</p>
                 <p>Publicaciones</p>
                 <input type="text" id="" class="user-description">
@@ -65,7 +65,7 @@
                 <div class="center">
                     <!-- Base de datos -->
                     <div id="bd" class="hiden">
-                        <p>Nombre Usuario</p>
+                        <p id="user-name-post">Nombre Usuario</p>
                         <img src="../../image/user.jpg">
                         <textarea class="textarea-post" name="publicacion" id="post" placeholder="Cuéntanos algo..."></textarea>
                         <select>
@@ -80,12 +80,12 @@
                         <h3>Posts</h3>
                     </div>
 
-                    <div class="personal-post">
-                        <p>Nombre Usuario</p>
+                     <div class="personal-post">
+                     <!--   <p>Nombre Usuario</p>
                         <img src="../../image/user.jpg">
                         <textarea class="textarea-posts"></textarea>
-                        <input type="button" value="Me gusta">
-                    </div>
+                        <input type="button" value="Me gusta">-->
+                    </div> 
                 </div>
             </div>
         </div>
@@ -100,6 +100,7 @@
     <!-- Inicializa Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script src="../config.js"></script>
+    <script src="../app.js"></script>
     <script src="perfil.js"></script>
 </body>
 
