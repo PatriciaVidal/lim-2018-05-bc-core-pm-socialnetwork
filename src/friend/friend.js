@@ -6,6 +6,7 @@ window.onload = () => {
             logout.classList.remove("hiden");
             /*  username.innerHTML = `Bienvenid@ ${user.displayName}`; */
             console.log(user.uid);
+            
         } else {
             console.log('Sin usuario');
             goToLogin();
