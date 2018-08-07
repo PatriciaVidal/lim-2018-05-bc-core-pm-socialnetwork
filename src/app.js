@@ -16,6 +16,14 @@ window.onload = () => {
       login.classList.add("hiden");
       logout.classList.remove("hiden");
       username.innerHTML = `Bienvenida ${user.displayName}`;
+      //Llamando a Data Firebase///////////////////
+      const ubicacionObject = firebase.database().ref('user-posts').child(user.uid);
+        ubicacionObject.on('child_added', snap => {
+            console.log(snap.val().body);
+        })
+        console.log("ubicacion  " + ubicacionObject);
+      /////////////////777//////////
+
     } else {
       console.log('Sin usuario');
       login.classList.remove("hiden");
