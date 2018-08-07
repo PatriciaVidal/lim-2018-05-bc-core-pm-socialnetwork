@@ -1,4 +1,4 @@
-@import url("../tipografia/fonts.css");
+@import url("http://127.0.0.1:5500/tipografia/fonts.css");
 
 html{
   position: absolute;
@@ -49,7 +49,7 @@ nav li a{
   float: right;
   padding: 10px 50px;
   color: white;
-  font-family: 'Helvetica';
+  font-family: MyriadPro;
   font-style: oblique;
   cursor: pointer;
 }
