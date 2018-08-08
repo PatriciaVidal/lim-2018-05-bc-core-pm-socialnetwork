@@ -73,6 +73,17 @@
         </div>
     </div>
 
+     <!-- Base de datos -->
+     <div id="bd" class="hiden">
+        <p id="user-name-post">Nombre Usuario</p>
+        &nbsp;&nbsp;<input type="button" id="btnUser" class="user-face">&nbsp;&nbsp;
+        <textarea class="textarea-post" name="publicacion" id="post" placeholder="Cuéntanos algo..."></textarea>
+        <select>
+            <option value="public">Público</option>
+            <option value="yo">Solo yo</option>
+        </select>
+        <input type="button" id="btnSave" value="Publicar">
+    </div>
     <!-- Inicializa Firebase -->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script src="../config.js"></script>

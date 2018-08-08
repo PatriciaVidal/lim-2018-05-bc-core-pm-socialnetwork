@@ -4,8 +4,17 @@ window.onload = () => {
         if (user) {
             console.log('Usuario Logueado');
             logout.classList.remove("hiden");
-            /*  username.innerHTML = `Bienvenid@ ${user.displayName}`; */
+            //username.innerHTML = `Bienvenid@ ${user.displayName}`; 
             console.log(user.uid);
+
+            //Llamando a Data Firebase///////////////////
+            const ubicacionObject = firebase.database().ref('user-posts').child(user.uid);
+            ubicacionObject.on('child_added', snap => {
+                console.log(snap.val().body);
+            });
+            console.log("ubicacion  " + ubicacionObject)
+            /////////////////777//////////
+
         } else {
             console.log('Sin usuario');
             goToLogin();
