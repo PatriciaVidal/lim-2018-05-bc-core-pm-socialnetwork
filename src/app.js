@@ -2,6 +2,7 @@ const userNameProfile = document.getElementById('user-name-profile');
 const userNamePost = document.getElementById('user-name-post');
 const logout = document.getElementById('logout');
 const btnSave = document.getElementById('btnSave');
+
 const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
@@ -30,6 +31,15 @@ window.onload = () => {
       logout.classList.add("hiden");
     }
   });
+
+const bd = document.getElementById("bd");
+const post = document.getElementById("post");
+const posts  = document.getElementById("posts");
+
+
+goToLogin = () => {
+  window.location.assign("../index.html");
+
 }
 
 
@@ -134,40 +144,3 @@ btnSave.addEventListener('click', () => {
   posts.appendChild(contPost);
 })
 
-
-
-
-
-//Evento logearse
-btnLogout.addEventListener('click', () => {
-  firebase.auth().signOut().then(function () {
-    console.log('Cerró Sesión');
-    login.classList.remove("hiden");
-    logout.classList.add("hiden");
-  }).catch(function (error) {
-    console.log('Error al cerrar Sesión');
-  });
-})
-
-//Evento logearse con Facebook
-btnFacebook.addEventListener('click', () => {
-  login.classList.add("hiden");
-  logout.classList.remove("hiden");
-
-
-//Evento logearse con Google
-btnGoogle.addEventListener('click', () => {
-  login.classList.add("hiden");
-  logout.classList.remove("hiden");
-  var provider = new firebase.auth.GoogleAuthProvider();
-
-  firebase.auth().signInWithPopup(provider)
-    .then(function (result) { console.log('Login Google') })
-    .catch(function (error) {
-      console.log(error.code);
-      console.log(error.message);
-      console.log(error.email);
-      console.log(error.credential);
-    });
-
-});
