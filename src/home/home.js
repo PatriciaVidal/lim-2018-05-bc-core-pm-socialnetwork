@@ -130,5 +130,5 @@ btnToPost.addEventListener('click', () => {
     contPost.appendChild(btnDelete);
     contPost.appendChild(btnLike);
     posts.appendChild(contPost);
-});
+}); 
 
