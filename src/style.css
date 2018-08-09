@@ -63,6 +63,13 @@ body {
   z-index: 9;
 }
 
+form {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .register {
   z-index: 6;
 }
@@ -80,19 +87,22 @@ label {
   margin-top: 10px;
   text-align: left;
   margin: 10px;
-  width:100%;
+  width: 100%;
 }
 
 .login-google {
   width: 60px;
   height: 60px;
+  float: left;
   background-image: url("../image/boton_google.png");
   background-size: 60px;
   background-repeat: no-repeat;
   margin: 0px;
   padding: 0px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border:0;
+  box-shadow: .5px .5px 5px rgba(0,0,0,.5);
   cursor: pointer;
   opacity: 0.80;
 }
@@ -106,13 +116,16 @@ label {
 .login-facebook {
   width: 60px;
   height: 60px;
+  float: right;
   background-image: url("../image/fb.png");
   background-size: 60px;
   background-repeat: no-repeat;
   margin: 0px;
   padding: 0px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border:0;
+  box-shadow: .5px .5px 5px rgba(0,0,0,.5);
   cursor: pointer;
   opacity: 0.80;
 }
@@ -143,12 +156,17 @@ label {
 .button-register {
   background-color: #83BE52;
   color: #FFFFFF;
+  border: 0;
+  font-size: 18px;
+  box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
 }
 
 .button-registrarse {
-  border-color: #83BE52;
   background-color: #FFFFFF;
   color: #83BE52;
+  border: 0;
+  font-size: 18px;
+  box-shadow: .5px .5px 5px rgba(0, 0, 0, .5);
 }
 
 input[type="email"],
@@ -176,14 +194,12 @@ input[type="text"] {
   display: block;
 }
 
-/*Validación correo y contraseña */
-
 span {
   color: #e52727;
   font-size: 15px;
+  margin:10px;
 }
 
-/* Galaxy S3, S4, S5: 360 x 640  */
 
 @media only screen and (max-width: 900px) {
   .content-presentation {
@@ -211,7 +227,6 @@ span {
   .button-registrarse,
   .button-register {
     height: 35px;
-    margin: 2px;
   }
   input[type="email"],
   input[type="password"],

@@ -10,6 +10,7 @@ window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             newPostObject.uid = firebase.auth().currentUser.uid;
+
             getUserForId(user.uid, (userDatabase) => {
                 console.log(userDatabase);
                 userNameProfile.innerHTML = userDatabase.fullName;
@@ -20,7 +21,14 @@ window.onload = () => {
 
             getPost((snapshot) => {
                 snapshot.forEach(element => {
-                    console.log(element);
+                    console.log(element.val());
+
+                    if (user.uid === element.val().uid) {
+                        myPosts(element.key);
+                    } else {
+                        otherPost(element.key);
+                    }
+
                 });
             });
 
@@ -45,6 +53,72 @@ contador.addEventListener('click', () => {
 });
 
 
+
+myPosts = (newPost) => {
+    const nameUsers = document.createElement('p');
+    nameUsers.setAttribute('id', userNamePost);
+
+    const photoUser = document.createElement('img');
+    photoUser.setAttribute('src', '../../image/user.jpg');
+
+    const btnUpdate = document.createElement("input");
+    btnUpdate.setAttribute("value", "Editar");
+    btnUpdate.setAttribute("type", "button");
+
+    const btnDelete = document.createElement("input");
+    btnDelete.setAttribute("value", "Eliminar");
+    btnDelete.setAttribute("type", "button");
+
+    const btnLike = document.createElement('input');
+    btnLike.setAttribute("value", "Me gusta");
+    btnLike.setAttribute("type", "button");
+
+    const contPost = document.createElement('div');
+    contPost.setAttribute('class', 'friend-post');
+
+    const textPost = document.createElement('textarea');
+    textPost.setAttribute('class', 'textarea-post');
+    textPost.setAttribute("id", newPost);
+
+    contPost.appendChild(nameUsers);
+    contPost.appendChild(photoUser);
+    contPost.appendChild(btnUpdate);
+    contPost.appendChild(btnDelete);
+    contPost.appendChild(btnLike);
+    contPost.appendChild(textPost);
+
+    posts.appendChild(contPost);
+
+}
+
+otherPost = (newPost) => {
+
+    const nameUsers = document.createElement('p');
+    nameUsers.setAttribute('id', userNamePost);
+
+    const photoUser = document.createElement('img');
+    photoUser.setAttribute('src', '../../image/user.jpg');
+
+    const btnLike = document.createElement('input');
+    btnLike.setAttribute("value", "Me gusta");
+    btnLike.setAttribute("type", "button");
+
+    const contPost = document.createElement('div');
+    contPost.setAttribute('class', 'friend-post');
+
+    const textPost = document.createElement('textarea');
+    textPost.setAttribute('class', 'textarea-post');
+    textPost.setAttribute("id", newPost);
+
+    contPost.appendChild(nameUsers);
+    contPost.appendChild(photoUser);
+    contPost.appendChild(btnLike);
+    contPost.appendChild(textPost);
+
+    posts.appendChild(contPost);
+}
+
+
 btnToPost.addEventListener('click', () => {
     newPostObject.mode = selectMode.value;
     newPostObject.body = post.value;
@@ -56,52 +130,7 @@ btnToPost.addEventListener('click', () => {
 
     newPost = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
 
-    myPosts = (newPost) => {
-        const nameUsers = document.createElement('p');
-        nameUsers.setAttribute('id', userNamePost);
 
-        const photoUser = document.createElement('img');
-        photoUser.setAttribute('src', '../../image/user.jpg');
-
-        const btnUpdate = document.createElement("input");
-        btnUpdate.setAttribute("value", "Editar");
-        btnUpdate.setAttribute("type", "button");
-
-        const btnDelete = document.createElement("input");
-        btnDelete.setAttribute("value", "Eliminar");
-        btnDelete.setAttribute("type", "button");
-
-        const btnLike = document.createElement('input');
-        btnLike.setAttribute("value", "Me gusta");
-        btnLike.setAttribute("type", "button");
-
-        const contPost = document.createElement('div');
-        contPost.setAttribute('class', 'friend-post');
-
-        const textPost = document.createElement('textarea');
-        textPost.setAttribute('class', 'textarea-post');
-        textPost.setAttribute("id", newPost);
-    }
-
-    otherPost = (newPost) => {
-
-        const nameUsers = document.createElement('p');
-        nameUsers.setAttribute('id', userNamePost);
-
-        const photoUser = document.createElement('img');
-        photoUser.setAttribute('src', '../../image/user.jpg');
-
-        const btnLike = document.createElement('input');
-        btnLike.setAttribute("value", "Me gusta");
-        btnLike.setAttribute("type", "button");
-
-        const contPost = document.createElement('div');
-        contPost.setAttribute('class', 'friend-post');
-
-        const textPost = document.createElement('textarea');
-        textPost.setAttribute('class', 'textarea-post');
-        textPost.setAttribute("id", newPost);
-    }
 
     const nameUsers = document.createElement('p');
     nameUsers.setAttribute('id', userNamePost);

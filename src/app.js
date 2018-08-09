@@ -17,8 +17,8 @@ goToLogin = () => {
 };
 
 getUserForId = (uid, callback) => {
-  const userRef = firebase.database().ref('users/'+uid);
-  userRef.once('value',(snap)=>{
+  const userRef = firebase.database().ref('users/' + uid);
+  userRef.once('value', (snap) => {
     callback(snap.val());
   })
 }
