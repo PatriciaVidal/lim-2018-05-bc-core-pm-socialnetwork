@@ -8,7 +8,6 @@ const bd = document.getElementById("bd");
 const post = document.getElementById('post');
 const posts = document.getElementById('posts');
 
-
 goToHome = () => {
   window.location.assign("home/home.html");
 }
@@ -38,7 +37,20 @@ updateOrCreateUser = (user) => {
   );
 }
 
-writeNewPost = (uid, body) => {
+getPostForId = (uid, callback) => {
+  const ubicationPosts = firebase.database().ref('user-posts').child(uid);
+  ubicationPosts.on('value', snap => {
+      callback(snap.val());
+  }); 
+}
+
+getPost = (callback) => {
+  const ubicationPosts = firebase.database().ref('posts');
+  ubicationPosts.once('value', (snap) => {
+    callback(snap);
+  })
+}
+
 
   var postData = {
     uid: uid, //  ESTO ES EL ID DE USUARIO
