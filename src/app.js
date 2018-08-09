@@ -52,9 +52,11 @@ getPost = (callback) => {
 }
 
 
+writeNewPost = (uid, body, mode) => {
   var postData = {
     uid: uid, //  ESTO ES EL ID DE USUARIO
     body: body, // ESTO ES EL CONTENIDO DEL TEXTAREA
+    mode: mode,
   };
 
   //8. Get a key for a new Post.

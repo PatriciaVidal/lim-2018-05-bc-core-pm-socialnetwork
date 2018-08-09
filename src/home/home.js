@@ -16,7 +16,7 @@ window.onload = () => {
             getPost((snapshot) => {
                 snapshot.forEach(element => {
                     console.log(element.val().body);
-            });
+                });
             });
         } else {
             console.log('Sin usuario');
@@ -174,5 +174,7 @@ btnToPost.addEventListener('click', () => {
     contPost.appendChild(btnDelete);
     contPost.appendChild(btnLike);
     posts.appendChild(contPost);
+
+    post.value = "";
 });
 
