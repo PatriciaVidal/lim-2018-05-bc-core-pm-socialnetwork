@@ -9,20 +9,14 @@ let newPostObject = {};
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-
+            newPostObject.uid = firebase.auth().currentUser.uid;
             getUserForId(user.uid, (userDatabase) => {
                 console.log(userDatabase);
                 userNameProfile.innerHTML = userDatabase.fullName;
                 userNamePost.innerHTML = userDatabase.fullName;
                 photoUserProfile.style.background = "url('" + userDatabase.profilePicture + "')";
-                photoUserPost.style.background = "url('" +userDatabase.profilePicture + "')";
-
+                photoUserPost.style.background = "url('" + userDatabase.profilePicture + "')";
             })
-
-
-
-
-            newPostObject.uid = firebase.auth().currentUser.uid;
 
             getPost((snapshot) => {
                 snapshot.forEach(element => {
@@ -31,24 +25,16 @@ window.onload = () => {
             });
 
 
+
+
+
+            newPostObject.uid = firebase.auth().currentUser.uid;
         } else {
             console.log('Sin usuario');
             goToLogin();
         }
     });
 }
-
-// evento que permite cerrar sesion
-btnLogout.addEventListener('click', () => {
-    firebase.auth().signOut().then(function () {
-        console.log('Cerró Sesión');
-        logout.classList.add("hiden");
-        goToLogin();
-    }).catch(function (error) {
-        console.log('Error al cerrar Sesión');
-    });
-})
-
 
 let count = 0;
 let contandoAlDarleClick = 0;
@@ -70,7 +56,7 @@ btnToPost.addEventListener('click', () => {
 
     newPost = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
 
-    myPosts = () => {
+    myPosts = (newPost) => {
         const nameUsers = document.createElement('p');
         nameUsers.setAttribute('id', userNamePost);
 
@@ -97,7 +83,7 @@ btnToPost.addEventListener('click', () => {
         textPost.setAttribute("id", newPost);
     }
 
-    otherPost = () => {
+    otherPost = (newPost) => {
 
         const nameUsers = document.createElement('p');
         nameUsers.setAttribute('id', userNamePost);
@@ -199,3 +185,13 @@ btnToPost.addEventListener('click', () => {
     post.value = "";
 });
 
+// evento que permite cerrar sesion
+btnLogout.addEventListener('click', () => {
+    firebase.auth().signOut().then(function () {
+        console.log('Cerró Sesión');
+        logout.classList.add("hiden");
+        goToLogin();
+    }).catch(function (error) {
+        console.log('Error al cerrar Sesión');
+    });
+})
