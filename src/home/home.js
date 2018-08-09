@@ -84,6 +84,16 @@ myPosts = (newPostKey, postBody, postMode, userFullName, userPhoto) => {
     textPost.setAttribute("id", newPostKey);
     textPost.innerHTML = postBody;
 
+    const contador = document.getElementById('contar');
+    const sumando = document.getElementById('contador');
+    let count = 0;
+    let contandoAlDarleClick = 0;
+    btnLike.addEventListener('click', () => {
+        count = contandoAlDarleClick += 1;
+        sumando.innerHTML = count;
+        postObject.countLike = count;
+    });
+
     btnDelete.addEventListener('click', () => {
 
         let respDelete = confirm('¿Desea eliminar este post?');
@@ -165,7 +175,6 @@ otherPost = (newPostKey, postBody, postMode) => {
 
 }
 
-
 btnToPost.addEventListener('click', () => {
     newPostObject.mode = selectMode.value;
     newPostObject.body = post.value;
@@ -216,8 +225,6 @@ btnToPost.addEventListener('click', () => {
             alert('Completado!');
             reload_page();
         }
-
-
 
     });
     //boton actualizar
