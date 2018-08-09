@@ -1,23 +1,36 @@
 const selectMode = document.getElementById('select-mode');
 const contador = document.getElementById('contar');
 const sumando = document.getElementById('contador');
-const photoUser = document.getElementById('btn-user');
+const photoUserProfile = document.getElementById('photo-user-profile');
+const photoUserPost = document.getElementById('photo-user-post');
 
 let newPostObject = {};
 
 window.onload = () => {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            userNameProfile.innerHTML = `${user.displayName}`;
-            userNamePost.innerHTML = `${user.displayName}`;
+
+            getUserForId(user.uid, (userDatabase) => {
+                console.log(userDatabase);
+                userNameProfile.innerHTML = userDatabase.fullName;
+                userNamePost.innerHTML = userDatabase.fullName;
+                photoUserProfile.style.background = "url('" + userDatabase.profilePicture + "')";
+                photoUserPost.style.background = "url('" +userDatabase.profilePicture + "')";
+
+            })
+
+
+
 
             newPostObject.uid = firebase.auth().currentUser.uid;
 
             getPost((snapshot) => {
                 snapshot.forEach(element => {
-                    console.log(element.val().body);
+                    console.log(element);
                 });
             });
+
+
         } else {
             console.log('Sin usuario');
             goToLogin();
@@ -147,20 +160,32 @@ btnToPost.addEventListener('click', () => {
     btnUpdate.addEventListener('click', () => {
 
         btnUpdate.setAttribute('value', 'Guardar');
-        const newUpdate = document.getElementById(newPost);
-        const nuevoPost = {
-            body: newUpdate.value,
+        btnUpdate.setAttribute('id', 'bntSave');
+        post.autofocus;
 
-        };
+        const btnSave = document.getElementById('btnSave');
+        btnSave.addEventListener('click', () => {
+            const newUpdate = document.getElementById(newPost);
+            const nuevoPost = {
+                body: newUpdate.value,
+                mode: selectMode.value,
+                uid: newPostObject.uid
 
-        var updatesUser = {};
-        var updatesPost = {};
+            };
 
-        updatesUser['/user-posts/' + newPostObject.uid + '/' + newPost] = nuevoPost;
-        updatesPost['/posts/' + newPost] = nuevoPost;
+            var updatesUser = {};
+            var updatesPost = {};
 
-        firebase.database().ref().update(updatesUser);
-        firebase.database().ref().update(updatesPost);
+            updatesUser['/user-posts/' + newPostObject.uid + '/' + newPost] = nuevoPost;
+            updatesPost['/posts/' + newPost] = nuevoPost;
+
+            firebase.database().ref().update(updatesUser);
+            firebase.database().ref().update(updatesPost);
+
+            btnSave.setAttribute('value', 'editar');
+            btnSave.setAttribute('id', 'btnUpdate');
+        })
+
     });
 
     contPost.appendChild(nameUsers);

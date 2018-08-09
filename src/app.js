@@ -16,13 +16,20 @@ goToLogin = () => {
   window.location.assign("../index.html");
 };
 
+getUserForId = (uid, callback) => {
+  const userRef = firebase.database().ref('users/'+uid);
+  userRef.once('value',(snap)=>{
+    callback(snap.val());
+  })
+}
+
 updateOrCreateUser = (user) => {
   firebase.database().ref('users/' + user.uid).set(
     {
       //Valores que se van a crear en la BD
-      fullname: user.displayName,
+      fullName: user.displayName,
       email: user.email,
-      profile_picture: user.photoURL
+      profilePicture: user.photoURL
     },
 
     (error) => {
@@ -40,8 +47,8 @@ updateOrCreateUser = (user) => {
 getPostForId = (uid, callback) => {
   const ubicationPosts = firebase.database().ref('user-posts').child(uid);
   ubicationPosts.on('value', snap => {
-      callback(snap.val());
-  }); 
+    callback(snap.val());
+  });
 }
 
 getPost = (callback) => {
