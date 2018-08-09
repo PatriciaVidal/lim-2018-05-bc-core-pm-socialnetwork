@@ -51,7 +51,6 @@ getPost = (callback) => {
   })
 }
 
-
 writeNewPost = (uid, body, mode) => {
   var postData = {
     uid: uid, //  ESTO ES EL ID DE USUARIO
