@@ -1,6 +1,5 @@
 const selectMode = document.getElementById('select-mode');
-const contador = document.getElementById('contar');
-const sumando = document.getElementById('contador');
+
 const photoUserProfile = document.getElementById('photo-user-profile');
 const photoUserPost = document.getElementById('photo-user-post');
 
@@ -15,23 +14,22 @@ window.onload = () => {
                 console.log(userDatabase);
                 userNameProfile.innerHTML = userDatabase.fullName;
                 userNamePost.innerHTML = userDatabase.fullName;
-                photoUserProfile.style.background = "url('" + userDatabase.profilePicture + "')";
-                photoUserPost.style.background = "url('" + userDatabase.profilePicture + "')";
-            })
+                photoUserProfile.style.backgroundImage = "url('" + userDatabase.profilePicture + "')";
+                photoUserPost.style.backgroundImage = "url('" + userDatabase.profilePicture + "')";
 
-            getPost((snap) => {
-                snap.forEach(element => {
-                    console.log(element.val());
+                getPost((snap) => {
+                    snap.forEach(element => {
+                        console.log(element.val());
+                        console.log(element);
 
-                    if (user.uid === element.val().uid) {
-                        myPosts(element.key, element.body, element.mode);
-                    } else {
-                        otherPost(element.key);
-                    }
-
+                        if (user.uid === element.val().uid) {
+                            myPosts(element.key, element.val().body, element.val().mode, userDatabase.fullName, userDatabase.profilePicture);
+                        } else {
+                            otherPost(element.key, element.val().body, element.val().mode);
+                        }
+                    });
                 });
-            });
-
+            })
 
             newPostObject.uid = firebase.auth().currentUser.uid;
         } else {
@@ -41,23 +39,29 @@ window.onload = () => {
     });
 }
 
+
+/* const contador = document.getElementById('contar');
+const sumando = document.getElementById('contador');
 let count = 0;
 let contandoAlDarleClick = 0;
 contador.addEventListener('click', () => {
     count = contandoAlDarleClick += 1;
     sumando.innerHTML = count;
     postObject.countLike = count;
-});
+}); */
 
 
+myPosts = (newPostKey, postBody, postMode, userFullName, userPhoto) => {
 
-myPosts = (newPostKey, postBody, postMode) => {
     const nameUsers = document.createElement('p');
-    nameUsers.setAttribute('id', userNamePost);
+    nameUsers.setAttribute('id', 'userNamePost');
+    nameUsers.innerHTML = userFullName;
 
-    const photoUser = document.createElement('div');
-    photoUser.innerHTML = `&nbsp;&nbsp;<input type="button" id="photo-user-post" class="user-face">&nbsp;&nbsp;
-    `;
+    const photoUser = document.createElement('input');
+    photoUser.setAttribute('type', 'button');
+    photoUser.setAttribute('id', 'photo-user-post');
+    photoUser.setAttribute('class', 'user-face');
+    photoUser.style.backgroundImage = "url('" + userPhoto + "')";
 
     const btnUpdate = document.createElement("input");
     btnUpdate.setAttribute("value", "Editar");
@@ -67,7 +71,8 @@ myPosts = (newPostKey, postBody, postMode) => {
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
 
-    const btnLike = document.createElement('div');
+    const btnLike = document.createElement('button');
+    btnLike.style.border = 'none';
     btnLike.innerHTML = `<button value="Me gusta" id="contar" class="button-like"><img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
     <label id="contador">0</label></button>`;
 
@@ -79,6 +84,45 @@ myPosts = (newPostKey, postBody, postMode) => {
     textPost.setAttribute("id", newPostKey);
     textPost.innerHTML = postBody;
 
+    btnDelete.addEventListener('click', () => {
+
+        let respDelete = confirm('¿Desea eliminar este post?');
+
+        if (respDelete == true) {
+            firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPost).remove();
+            firebase.database().ref().child('posts/' + newPost).remove();
+            while (posts.firstChild) posts.removeChild(posts.firstChild);
+            alert('Completado!');
+            reload_page();
+        }
+
+    });
+
+    btnUpdate.addEventListener('click', () => {
+
+        btnUpdate.setAttribute('value', 'Guardar');
+        textPost.autofocus;
+
+        const newUpdate = document.getElementById(newPostKey);
+        const nuevoPost = {
+            body: newUpdate.value,
+            mode: selectMode.value,
+            uid: newPostObject.uid
+        };
+
+        var updatesUser = {};
+        var updatesPost = {};
+
+        updatesUser['/user-posts/' + newPostObject.uid + '/' + newPostKey] = nuevoPost;
+        updatesPost['/posts/' + newPostKey] = nuevoPost;
+
+        firebase.database().ref().update(updatesUser);
+        firebase.database().ref().update(updatesPost);
+
+
+    });
+
+
     contPost.appendChild(nameUsers);
     contPost.appendChild(photoUser);
     contPost.appendChild(textPost);
@@ -89,16 +133,18 @@ myPosts = (newPostKey, postBody, postMode) => {
     posts.appendChild(contPost);
 }
 
-otherPost = (newPost) => {
+otherPost = (newPostKey, postBody, postMode) => {
 
     const nameUsers = document.createElement('p');
     nameUsers.setAttribute('id', userNamePost);
 
-    const photoUser = document.createElement('div');
-    photoUser.innerHTML = `&nbsp;&nbsp;<input type="button" id="photo-user-post" class="user-face">&nbsp;&nbsp;
-    `;
+    const photoUser = document.createElement('input');
+    photoUser.setAttribute('type', 'button');
+    photoUser.setAttribute('id', 'photo-user-post');
+    photoUser.setAttribute('class', 'user-face');
 
-    const btnLike = document.createElement('div');
+    const btnLike = document.createElement('button');
+    btnLike.style.border = 'none';
     btnLike.innerHTML = `<button value="Me gusta" id="contar" class="button-like"><img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
     <label id="contador">0</label></button>`;
 
@@ -107,7 +153,8 @@ otherPost = (newPost) => {
 
     const textPost = document.createElement('textarea');
     textPost.setAttribute('class', 'textarea-post');
-    textPost.setAttribute("id", newPost);
+    textPost.setAttribute("id", newPostKey);
+    textPost.innerHTML = postBody;
 
     contPost.appendChild(nameUsers);
     contPost.appendChild(photoUser);
@@ -130,8 +177,6 @@ btnToPost.addEventListener('click', () => {
 
     newPost = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
 
-
-
     const nameUsers = document.createElement('p');
     nameUsers.setAttribute('id', userNamePost);
 
@@ -146,9 +191,9 @@ btnToPost.addEventListener('click', () => {
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
 
-    const btnLike = document.createElement('input');
-    btnLike.setAttribute("value", "Me gusta");
-    btnLike.setAttribute("type", "button");
+    const btnLike = document.createElement('div');
+    btnLike.innerHTML = `<button value="Me gusta" id="contar" class="button-like"><img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
+    <label id="contador">0</label></button>`;
 
     var contPost = document.createElement('div');
     contPost.setAttribute('class', 'friend-post');
@@ -162,13 +207,17 @@ btnToPost.addEventListener('click', () => {
     //Boton eliminar
     btnDelete.addEventListener('click', () => {
 
-        firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPost).remove();
-        firebase.database().ref().child('posts/' + newPost).remove();
+        let respDelete = confirm('¿Desea eliminar este post?');
 
-        while (posts.firstChild) posts.removeChild(posts.firstChild);
+        if (respDelete === true) {
+            firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPost).remove();
+            firebase.database().ref().child('posts/' + newPost).remove();
+            while (posts.firstChild) posts.removeChild(posts.firstChild);
+            alert('Completado!');
+            reload_page();
+        }
 
-        alert('The user is deleted successfully!');
-        reload_page();
+
 
     });
     //boton actualizar
@@ -212,6 +261,7 @@ btnToPost.addEventListener('click', () => {
     posts.appendChild(contPost);
 
     post.value = "";
+
 });
 
 // evento que permite cerrar sesion
