@@ -89,9 +89,7 @@ btnToPost.addEventListener('click', () => {
         const nameUsers = document.createElement('p');
         nameUsers.setAttribute('id', userNamePost);
 
-
         const photoUser = document.createElement('img');
-
         photoUser.setAttribute('src', '../../image/user.jpg');
 
         const btnLike = document.createElement('input');
@@ -119,7 +117,6 @@ btnToPost.addEventListener('click', () => {
     var btnDelete = document.createElement("input");
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
-
 
     const btnLike = document.createElement('input');
     btnLike.setAttribute("value", "Me gusta");
