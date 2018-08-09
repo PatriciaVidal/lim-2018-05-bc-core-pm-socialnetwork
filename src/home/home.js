@@ -89,7 +89,9 @@ btnToPost.addEventListener('click', () => {
         const nameUsers = document.createElement('p');
         nameUsers.setAttribute('id', userNamePost);
 
+
         const photoUser = document.createElement('img');
+
         photoUser.setAttribute('src', '../../image/user.jpg');
 
         const btnLike = document.createElement('input');
@@ -162,9 +164,6 @@ btnToPost.addEventListener('click', () => {
 
         firebase.database().ref().update(updatesUser);
         firebase.database().ref().update(updatesPost);
-
-
-
     });
 
     contPost.appendChild(nameUsers);
