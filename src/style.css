@@ -93,11 +93,11 @@ label {
 .login-google {
   width: 60px;
   height: 60px;
-  float: left;
+
   background-image: url("../image/boton_google.png");
   background-size: 60px;
   background-repeat: no-repeat;
-  margin: 0px;
+  margin-right: 12px;
   padding: 0px;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -116,11 +116,10 @@ label {
 .login-facebook {
   width: 60px;
   height: 60px;
-  float: right;
   background-image: url("../image/fb.png");
   background-size: 60px;
   background-repeat: no-repeat;
-  margin: 0px;
+  margin-left: 12px;
   padding: 0px;
   -moz-border-radius: 50%;
   border-radius: 50%;
