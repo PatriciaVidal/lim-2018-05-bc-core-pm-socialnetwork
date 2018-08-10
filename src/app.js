@@ -5,7 +5,7 @@ const btnToPost = document.getElementById('btnSave');
 const postState = document.getElementById('post-state');
 
 const bd = document.getElementById("bd");
-const post = document.getElementById('post');
+const textareaPostInicial = document.getElementById('textarea-post-init');
 const posts = document.getElementById('posts');
 
 goToHome = () => {
@@ -20,7 +20,7 @@ getUserForId = (uid, callback) => {
   const userRef = firebase.database().ref('users/' + uid);
   userRef.once('value', (snap) => {
     callback(snap.val());
-  })
+    })
 }
 
 updateOrCreateUser = (user) => {

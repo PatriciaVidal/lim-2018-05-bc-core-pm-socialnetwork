@@ -5,7 +5,9 @@ const photoUserPost = document.getElementById('photo-user-post');
 
 let newPostObject = {};
 
+
 window.onload = () => {
+
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             newPostObject.uid = firebase.auth().currentUser.uid;
@@ -20,12 +22,15 @@ window.onload = () => {
                 getPost((snap) => {
                     snap.forEach(element => {
                         console.log(element.val());
-                        console.log(element);
+                        //console.log(element.val().mode);
 
                         if (user.uid === element.val().uid) {
                             myPosts(element.key, element.val().body, element.val().mode, userDatabase.fullName, userDatabase.profilePicture);
-                        } else {
+                        } else if (element.val().mode === 'public') {
+                            console.log('Post Publico');
                             otherPost(element.key, element.val().body, element.val().mode);
+                        } else {
+                            console.log('post Privado');
                         }
                     });
                 });
@@ -54,7 +59,7 @@ contador.addEventListener('click', () => {
 myPosts = (newPostKey, postBody, postMode, userFullName, userPhoto) => {
 
     const nameUsers = document.createElement('p');
-    nameUsers.setAttribute('id', 'userNamePost');
+    nameUsers.setAttribute('id', 'user-name-post');
     nameUsers.innerHTML = userFullName;
 
     const photoUser = document.createElement('input');
@@ -71,44 +76,33 @@ myPosts = (newPostKey, postBody, postMode, userFullName, userPhoto) => {
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
 
-    const contPost = document.createElement('div');
-    contPost.setAttribute('class', 'friend-post');
+    const contentPost = document.createElement('div');
+    contentPost.setAttribute('class', 'friend-post');
 
-    const textPost = document.createElement('textarea');
-    textPost.setAttribute('class', 'textarea-post');
-    textPost.setAttribute("id", newPostKey);
-    textPost.innerHTML = postBody;
+    const textPostSaved = document.createElement('textarea');
+    textPostSaved.setAttribute('class', 'textarea-post');
+    textPostSaved.setAttribute("id", newPostKey);
 
-    const contador = document.getElementById('contar');
-    const sumando = document.getElementById('contador');
-    let count = 0;
-    let contandoAlDarleClick = 0;
-    btnLike.addEventListener('click', () => {
-        count = contandoAlDarleClick += 1;
-        sumando.innerHTML = count;
-        postObject.countLike = count;
-    });
+    textPostSaved.innerHTML = postBody;
 
+    //Boton eliminar
     btnDelete.addEventListener('click', () => {
 
-        let respDelete = confirm('¿Desea eliminar este post?');
-
-        if (respDelete == true) {
-            firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPost).remove();
-            firebase.database().ref().child('posts/' + newPost).remove();
-            while (posts.firstChild) posts.removeChild(posts.firstChild);
-            alert('Completado!');
-            reload_page();
-        }
-
+        firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPostKey).remove();
+        firebase.database().ref().child('posts/' + newPostKey).remove();
+        while (posts.firstChild) posts.removeChild(posts.firstChild);
+        alert('Post eliminado!');
+        reload_page();
     });
 
+    //boton actualizar
     btnUpdate.addEventListener('click', () => {
 
-        btnUpdate.setAttribute('value', 'Guardar');
-        textPost.autofocus;
+        btnUpdate.setAttribute('value', 'Editado');
+
 
         const newUpdate = document.getElementById(newPostKey);
+
         const nuevoPost = {
             body: newUpdate.value,
             mode: selectMode.value,
@@ -123,23 +117,21 @@ myPosts = (newPostKey, postBody, postMode, userFullName, userPhoto) => {
 
         firebase.database().ref().update(updatesUser);
         firebase.database().ref().update(updatesPost);
-
-
     });
 
-    contPost.appendChild(nameUsers);
-    contPost.appendChild(photoUser);
-    contPost.appendChild(textPost);
-    contPost.appendChild(btnUpdate);
-    contPost.appendChild(btnDelete);
+    contentPost.appendChild(nameUsers);
+    contentPost.appendChild(photoUser);
+    contentPost.appendChild(textPostSaved);
+    contentPost.appendChild(btnUpdate);
+    contentPost.appendChild(btnDelete);
 
-    posts.appendChild(contPost);
+    posts.appendChild(contentPost);
 }
 
 otherPost = (newPostKey, postBody, postMode) => {
 
     const nameUsers = document.createElement('p');
-    nameUsers.setAttribute('id', userNamePost);
+    nameUsers.setAttribute('id', 'user-name-post');
 
     const photoUser = document.createElement('input');
     photoUser.setAttribute('type', 'button');
@@ -151,36 +143,42 @@ otherPost = (newPostKey, postBody, postMode) => {
     btnLike.innerHTML = `<button value="Me gusta" id="contar" class="button-like"><img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
     <label id="contador">0</label></button>`;
 
-    const contPost = document.createElement('div');
-    contPost.setAttribute('class', 'friend-post');
+    const contentPost = document.createElement('div');
+    contentPost.setAttribute('class', 'friend-post');
 
-    const textPost = document.createElement('textarea');
-    textPost.setAttribute('class', 'textarea-post');
-    textPost.setAttribute("id", newPostKey);
-    textPost.innerHTML = postBody;
+    const textPostSaved = document.createElement('textarea');
+    textPostSaved.setAttribute('class', 'textarea-post');
+    textPostSaved.setAttribute("id", newPostKey);
 
-    contPost.appendChild(nameUsers);
-    contPost.appendChild(photoUser);
-    contPost.appendChild(textPost);
-    contPost.appendChild(btnLike);
+    textPostSaved.innerHTML = postBody;
 
-    posts.appendChild(contPost);
+    contentPost.appendChild(nameUsers);
+    contentPost.appendChild(photoUser);
+    contentPost.appendChild(textPostSaved);
+    contentPost.appendChild(btnLike);
+
+    posts.appendChild(contentPost);
 
 }
 
 btnToPost.addEventListener('click', () => {
     newPostObject.mode = selectMode.value;
-    newPostObject.body = post.value;
+    newPostObject.body = textareaPostInicial.value;
 
     if (newPostObject.body.length === 0) {
         alert("Creo que no haz escrito algun texto para publicar");
         return;
     }
 
-    newPost = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
+    newPostKey = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
 
+    
+
+});
+
+createElements = (newPostKey) => {
     const nameUsers = document.createElement('p');
-    nameUsers.setAttribute('id', userNamePost);
+    nameUsers.setAttribute('placeholder', 'user-name-post');
 
     const photoUser = document.createElement('img');
     photoUser.setAttribute('src', '../../image/user.jpg');
@@ -193,72 +191,60 @@ btnToPost.addEventListener('click', () => {
     btnDelete.setAttribute("value", "Eliminar");
     btnDelete.setAttribute("type", "button");
 
-    var contPost = document.createElement('div');
-    contPost.setAttribute('class', 'friend-post');
+    var contentPost = document.createElement('div');
+    contentPost.setAttribute('class', 'friend-post');
 
-    var textPost = document.createElement('textarea');
-    textPost.setAttribute('class', 'textarea-post');
-    textPost.setAttribute("id", newPost);
+    var textareaNewPost = document.createElement('textarea');
+    textareaNewPost.setAttribute('class', 'textarea-post');
+    textareaNewPost.setAttribute("id", newPostKey);
 
 
-    textPost.innerHTML = post.value;
+    textareaNewPost.innerHTML = textareaPostInicial.value;
+
     //Boton eliminar
     btnDelete.addEventListener('click', () => {
 
-        let respDelete = confirm('¿Desea eliminar este post?');
-
-        if (respDelete === true) {
-            firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPost).remove();
-            firebase.database().ref().child('posts/' + newPost).remove();
-            while (posts.firstChild) posts.removeChild(posts.firstChild);
-            alert('Completado!');
-            reload_page();
-        }
-
+        firebase.database().ref().child('/user-posts/' + newPostObject.uid + '/' + newPostKey).remove();
+        firebase.database().ref().child('posts/' + newPostKey).remove();
+        while (posts.firstChild) posts.removeChild(posts.firstChild);
+        alert('Post eliminado!');
+        reload_page();
     });
+
     //boton actualizar
     btnUpdate.addEventListener('click', () => {
 
-        btnUpdate.setAttribute('value', 'Guardar');
-        btnUpdate.setAttribute('id', 'bntSave');
-        post.autofocus;
+        btnUpdate.setAttribute('value', 'Editado');
+        textareaNewPost.autofocus;
 
-        const btnSave = document.getElementById('btnSave');
-        btnSave.addEventListener('click', () => {
-            const newUpdate = document.getElementById(newPost);
-            const nuevoPost = {
-                body: newUpdate.value,
-                mode: selectMode.value,
-                uid: newPostObject.uid
+        const newUpdate = document.getElementById(newPostKey);
 
-            };
+        const nuevoPost = {
+            body: newUpdate.value,
+            mode: selectMode.value,
+            uid: newPostObject.uid
+        };
 
-            var updatesUser = {};
-            var updatesPost = {};
+        var updatesUser = {};
+        var updatesPost = {};
 
-            updatesUser['/user-posts/' + newPostObject.uid + '/' + newPost] = nuevoPost;
-            updatesPost['/posts/' + newPost] = nuevoPost;
+        updatesUser['/user-posts/' + newPostObject.uid + '/' + newPostKey] = nuevoPost;
+        updatesPost['/posts/' + newPostKey] = nuevoPost;
 
-            firebase.database().ref().update(updatesUser);
-            firebase.database().ref().update(updatesPost);
-
-            btnSave.setAttribute('value', 'editar');
-            btnSave.setAttribute('id', 'btnUpdate');
-        })
-
+        firebase.database().ref().update(updatesUser);
+        firebase.database().ref().update(updatesPost);
     });
 
-    contPost.appendChild(nameUsers);
-    contPost.appendChild(photoUser);
-    contPost.appendChild(textPost);
-    contPost.appendChild(btnUpdate);
-    contPost.appendChild(btnDelete);
+    contentPost.appendChild(nameUsers);
+    contentPost.appendChild(photoUser);
+    contentPost.appendChild(textareaNewPost);
+    contentPost.appendChild(btnUpdate);
+    contentPost.appendChild(btnDelete);
 
-    posts.appendChild(contPost);
+    posts.appendChild(contentPost);
 
-    post.value = "";
-
-});
+    textareaPostInicial.value = "";
+}
 
 // evento que permite cerrar sesion
 btnLogout.addEventListener('click', () => {

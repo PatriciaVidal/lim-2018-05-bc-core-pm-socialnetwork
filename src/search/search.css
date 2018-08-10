@@ -1,4 +1,4 @@
-@import url("../../tipografia/fonts.css");
+@import url("http://127.0.0.1:5500/tipografia/fonts.css");
 
 html{
   position: absolute;
@@ -16,6 +16,12 @@ body{
   font-style: italic;
 }
 
+#search, textarea{
+  font-family: MyriadPro;
+  font-style: italic;
+  font-size: 15px;
+}
+
 #logo{
   text-align: center;
 }
@@ -24,13 +30,8 @@ header{
   width: 100%;
   background-color: #A05BA6;
   height: 40px;
-  position: relative;    
-}
-
-textarea{
-  font-family: MyriadPro;
-  font-style: italic;
-  font-size: 15px;
+  position: relative;  
+  
 }
 
 nav{
@@ -47,7 +48,7 @@ nav li a{
   text-decoration: none;
   padding: 5px 25px;
   display: block;
-  float: left;
+  float: left;  
 }
 
 #logout{
@@ -59,9 +60,12 @@ nav li a{
   cursor: pointer;
 }
 
+.menu-logout{
+  width: 23px;
+}
+
 nav li a:hover, .menu-logout:hover{
   background-color: #824787;
- /*  border-bottom: 5px solid #824787; */
 }
 
 .content{
@@ -87,20 +91,19 @@ nav li a:hover, .menu-logout:hover{
 .advertising{
   display: inline-block;
   border-radius: 5px;
-  background-color: #DCDCDC;
+  background-color: #E5E3E3;
   text-align: center;
   margin: 10px;
   padding: 5px;
 }
 
+.right{
+  width: 20%;
+}
+
 .menu-home, .menu-search, .menu-friend, .menu-perfil, .menu-logout{
   width: 25px;
   
-}
-
-
-.right{
-  width: 25%;
 }
 
 .personal-information{
@@ -134,7 +137,7 @@ p{
   padding: 5px;
 }
 
-#bd, .friend-post{
+.search-post{
   background-color: #E5E3E3;
   border-radius: 5px;
   width: 95%;
@@ -149,42 +152,40 @@ p{
   border-radius: 5px;
 }
 
+.search-text{
+  text-align: center;
+}
 
-input[value="Publicar"] {
-  width:100px;
-  height:22px;
-  font-size: 1rem;
-  color: white;
-  background-color: #83BE52;
-  border-radius: 7px;
-  border: 0;
-  outline: 0;
-  cursor: pointer;
+.search{
+border-radius:5px;
+width: 90%;
+padding: 10px;
+margin: 10px;
 }
 
 #imgLike{
-    size: 10px;
-    width: 15px;
-    text-align: center;
-    padding-top: 2px;
+  size: 10px;
+  width: 15px;
+  text-align: center;
+  padding-top: 2px;
 }
 
 .button-like{
-  border-radius: 7px;
-  width: 55px;
-  border: 1;
-  cursor: pointer;
-  font-size: 1rem;
-  background-color: white;
+border-radius: 7px;
+width: 110px;
+border: 1;
+cursor: pointer;
+font-size: 1rem;
+background-color: white;
 }
 
 .button-like::before{
-    width: 10px;
-    height:22px;
-    right: 5px;
-    top: 7px;
-    text-align: center;
-    font-size: 5px;
+  width: 10px;
+  height:22px;
+  right: 5px;
+  top: 7px;
+  text-align: center;
+  font-size: 5px;
 }
 
 .login-user-face{
@@ -234,7 +235,9 @@ input[value="Publicar"] {
     width: 65%;
   }
 }
+
 @media only screen and (max-width: 360px) {
+
   .left, .right{
     display: none;
   } 
@@ -254,11 +257,9 @@ input[value="Publicar"] {
     text-decoration: none;
     padding: 5px 15px;
     display: block;
-    float: left;    
-    }
-
-    #logout{
-      float: left;
-      padding: 10px 5px;
-    }
+    float: left;
+    
+  }
 }
+
+
