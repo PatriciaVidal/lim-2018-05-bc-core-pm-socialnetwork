@@ -173,7 +173,6 @@ btnToPost.addEventListener('click', () => {
     newPostKey = writeNewPost(newPostObject.uid, newPostObject.body, newPostObject.mode);
 
     
-
 });
 
 createElements = (newPostKey) => {
