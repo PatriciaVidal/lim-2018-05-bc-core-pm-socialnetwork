@@ -48,7 +48,7 @@ getPostForId = (uid, callback) => {
   });
 }
 
-getPost = (callback) => {
+getPost = (uid, callback) => {
   const ubicationPosts = firebase.database().ref('posts');
   ubicationPosts.once('value', (snap) => {
     callback(snap);
@@ -64,7 +64,7 @@ createNewPost = (uid, body, mode, user) => {
       fullName:  user.fullName,
       photoURL: user.profilePicture,
       like: 0,
-      created: new Date().getTime()
+     // created: new Date().getTime()
     };
 
     var newPostKey = firebase.database().ref().child('posts').push().key;

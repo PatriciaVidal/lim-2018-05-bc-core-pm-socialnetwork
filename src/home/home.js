@@ -7,22 +7,30 @@ let userFromDatabase;
 
 window.onload = () => {
 
-
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+      
       uid = user.uid;
       getUserForId(user.uid, (userDatabase) => {
+        console.log(userDatabase);
         userFromDatabase = userDatabase;
         userNameProfile.innerHTML = userDatabase.fullName;
         userNamePost.innerHTML = userDatabase.fullName;
         photoUserProfile.style.backgroundImage = "url('" + userDatabase.profilePicture + "')";
         photoUserPost.style.backgroundImage = "url('" + userDatabase.profilePicture + "')";
+
       });
 
+      getPost(user.id,(userPost)=>{
+        let post = userPost.val();
+        console.log(post);
+      })
 
       let postRef = firebase.database().ref("posts");
+      
       postRef.on('child_added', (snapshot) => {
         let post = snapshot.val();
+        console.log(post);
         if (user.uid === post.uid) {
           myPosts(snapshot.key, post);
         } else if (post.mode === 'public') {
@@ -36,6 +44,10 @@ window.onload = () => {
         if (bodyPostView != null && uid !== post.uid) {
           bodyPostView.innerHTML = post.body;
         }
+        const postLike = document.getElementById('count-like-' + snapshot.key);
+        
+        postLike.innerHTML = post.like;
+
       });
 
       postRef.on('child_removed', (snapshot) => {
@@ -105,6 +117,17 @@ myPosts = (postKey, post) => {
   textPostSaved.setAttribute("disabled", 'true');
   textPostSaved.innerHTML = post.body;
 
+
+  contentPost.appendChild(nameUsers);
+  contentPost.appendChild(mode);
+  contentPost.appendChild(photoUser);
+  contentPost.appendChild(textPostSaved);
+  contentPost.appendChild(btnUpdate);
+  contentPost.appendChild(btnDelete);
+
+  posts.appendChild(contentPost);
+
+
   //Boton eliminar
   btnDelete.addEventListener('click', () => {
 
@@ -119,7 +142,7 @@ myPosts = (postKey, post) => {
       body.disabled = false;
       btnUpdate.value = 'Guardar';
     } else {
-      const changeChange = {
+      const changeData = {
         body: body.value,
         mode: post.mode,
         uid: post.uid,
@@ -130,8 +153,8 @@ myPosts = (postKey, post) => {
       var updatesUser = {};
       var updatesPost = {};
 
-      updatesUser['/user-posts/' + post.uid + '/' + postKey] = changeChange;
-      updatesPost['/posts/' + postKey] = changeChange;
+      updatesUser['/user-posts/' + post.uid + '/' + postKey] = changeData;
+      updatesPost['/posts/' + postKey] = changeData;
 
       firebase.database().ref().update(updatesUser);
       firebase.database().ref().update(updatesPost);
@@ -140,6 +163,7 @@ myPosts = (postKey, post) => {
     }
 
   });
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     var btnUpdate = document.createElement("input");
@@ -164,8 +188,11 @@ myPosts = (postKey, post) => {
 >>>>>>> 9b82ada3fd08bf3dcdd8269736304cd0c0f67bd1
 
   posts.appendChild(contentPost);
+=======
+>>>>>>> cb5431ae567c2771d931cf420a66b3a87c0f5f55
 }
 
+let count = 0;
 otherPost = (postKey, post) => {
 
   const nameUsers = document.createElement('p');
@@ -182,9 +209,10 @@ otherPost = (postKey, post) => {
   photoUser.style.backgroundImage = "url('" + post.photoURL + "')";
 
   const btnLike = document.createElement('button');
-  btnLike.style.border = 'none';
-  btnLike.innerHTML = `<button value="Me gusta" id="contar" class="button-like"><img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
-    <label id="contador">0</label></button>`;
+  btnLike.innerHTML = `<img id="imgLike" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALASURBVGhD7Zi7bhNBFIZNgcSl4ioKEC0NHUiIAlHxBJZQZhyMKNKSlAgegFewkuysY88YI6GEgHgGJKCgSqiAUIKEQdyCAHN+c4LQcsbZtbMXS/tJv7LZPZd/Z2cv40pJSUnJZGCVPRBod80oez9Ubt0o9ylU9nOo7Uuj3QP6e93U7x7jcC+Iofw5yn2IXNT4U8utk5bRA704fHy61e5eo+1NavIh1K4/XPYbxc3bKXuY0/+yWO0eoZgFqrX5f15Eyr0f9KybPZw+Gi3dOk4j9ExsMkR0Rd6Gqn2By1SM7lwc7BNit9FTeOAyyRiY13ZDKBpPyn1valeHsC3GxJLdSHwSmDajjHxUNA1+QNKxJKL77gk8sb3toRG7JRXKVcrdYHvDma92D8a7YbOW7cEb2/SDx5hcIH8Z1b7KNv3QpVqWkguie2zTD90wL4TEQgje2KYfugIfpeRCiLyxTT8U9FVMLoDokfyFbfoZ6+WVvl6xTT8UtBpJKozoc2SFbfqhKTQnJRdBdAKzbNPPgmqfpJP4KRXIVeQp9jcRLpVYJEfFmj5bBPrOWbrjf0mFchGNfnPanWF78aCXRigWy0FYJLGt+GDpV4SPOnhYqi0dZVvJCGv2ilQ0Y9XYzmhQARMpmJ2UXWQbo9OYWd1HN/RzsUGKQk/0ZhvjgecvzcU3UqM0hF4jL+Z9BKp9GqsiqeHOyvbQi9vuLEGtcz7dJ5PtGd06x+3SASeRzpXIwPwWgze1cu9kI8mFH71Qk8tng5myp2jUxl470Bv/NWpx2WwJLndOkIm1qKkEWkMNLpcPzenmIRrFx4K5oUIOcrlMvtC3yn568TySjEpCLHI4vRg0Zhq743zBIgaxnFYs+pX+Lnqi3JaMQziGGA4vLmR09t8FEbaxjw9PBoHqKDK+CWGbd08Woe5cgvjfkpKSkiiVym9E/7T2Q9wMrAAAAABJRU5ErkJggg==">
+  `;//<label id="countLike">0</label>
+  const like = document.createElement('label');
+  like.setAttribute('id', 'count-like-' + postKey);
 
   const contentPost = document.createElement('div');
   contentPost.setAttribute('class', 'friend-post');
@@ -201,12 +229,29 @@ otherPost = (postKey, post) => {
   contentPost.appendChild(photoUser);
   contentPost.appendChild(textPostSaved);
   contentPost.appendChild(btnLike);
+  contentPost.appendChild(like);
 
   posts.appendChild(contentPost);
 
-}
+  //const countLike = document.getElementById('countLike');
+  btnLike.addEventListener('click', () => {
+    const body = document.getElementById('textarea-' + postKey);
+    count++;
+    console.log('click en like');
 
+    const changeData = {
+      uid: post.uid,
+      body: body.value,
+      mode: post.mode,
+      fullName: post.fullName,
+      photoURL: post.photoURL,
+      like: count
+    };
 
+    var updatesUser = {};
+    var updatesPost = {};
+
+<<<<<<< HEAD
 // evento que permite cerrar sesion
 <<<<<<< HEAD
 btnLogout.addEventListener('click', () => {
@@ -222,3 +267,13 @@ btnLogout.addEventListener('click', () => {
 
 =======
 >>>>>>> 9b82ada3fd08bf3dcdd8269736304cd0c0f67bd1
+=======
+    updatesUser['/user-posts/' + post.uid + '/' + postKey] = changeData;
+    updatesPost['/posts/' + postKey] = changeData;
+
+    firebase.database().ref().update(updatesUser);
+    firebase.database().ref().update(updatesPost);
+
+  })
+}
+>>>>>>> cb5431ae567c2771d931cf420a66b3a87c0f5f55
