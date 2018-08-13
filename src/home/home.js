@@ -21,11 +21,6 @@ window.onload = () => {
 
       });
 
-      getPost(user.id, (userPost) => {
-        let post = userPost.val();
-        console.log(post);
-      })
-
       let postRef = firebase.database().ref("posts");
 
       postRef.on('child_added', (snapshot) => {
@@ -36,6 +31,7 @@ window.onload = () => {
         } else if (post.mode === 'public') {
           otherPost(snapshot.key, post);
         }
+
       });
 
       postRef.on('child_changed', (snapshot) => {
@@ -44,8 +40,9 @@ window.onload = () => {
         if (bodyPostView != null && uid !== post.uid) {
           bodyPostView.innerHTML = post.body;
         }
+        console.log(post);
         const postLike = document.getElementById('count-like-' + snapshot.key);
-
+        console.log(post.like);
         postLike.innerHTML = post.like;
 
       });
@@ -64,19 +61,14 @@ window.onload = () => {
 }
 
 btnToPost.addEventListener('click', () => {
-  const postContainer = bodyUserPost.value;
-  const selectModePublicate = selectMode.value;
-  const valuePrivacy = postContainer.trim();
+  if (bodyUserPost.value.trim().length === 0) {
 
-  if (postContainer.length !== 0 && valuePrivacy !== '') {
-    if (selectModePublicate == 'public') {
-      createNewPost(uid, bodyUserPost.value, selectMode.value, userFromDatabase);
-    } else if (selectModePublicate == 'private') {
-      createNewPost();
-    }
-  } else {
-    alert('Creo que no haz escrito algun texto para publicar');
+    alert("Creo que no haz escrito algun texto para publicar");
+    return;
   }
+
+  createNewPost(uid, bodyUserPost.value, selectMode.value, userFromDatabase);
+  bodyUserPost.value = "";
 });
 
 btnLogout.addEventListener('click', () => {
@@ -138,8 +130,12 @@ myPosts = (postKey, post) => {
   //Boton eliminar
   btnDelete.addEventListener('click', () => {
 
-    firebase.database().ref().child('/user-posts/' + post.uid + '/' + postKey).remove();
-    firebase.database().ref().child('posts/' + postKey).remove();
+    let confirmDelete = confirm('¿Desea eliminar esta publicación?');
+    if (confirmDelete) {
+      firebase.database().ref().child('/user-posts/' + post.uid + '/' + postKey).remove();
+      firebase.database().ref().child('posts/' + postKey).remove();
+    }
+
   });
 
   //boton actualizar
@@ -216,6 +212,7 @@ otherPost = (postKey, post) => {
   `; //<label id="countLike">0</label>
   const like = document.createElement('label');
   like.setAttribute('id', 'count-like-' + postKey);
+  like.innerHTML = post.like;
 
   const contentPost = document.createElement('div');
   contentPost.setAttribute('class', 'friend-post');
@@ -239,7 +236,7 @@ otherPost = (postKey, post) => {
   //const countLike = document.getElementById('countLike');
   btnLike.addEventListener('click', () => {
     const body = document.getElementById('textarea-' + postKey);
-    count++;
+    const postLike = document.getElementById('count-like-' + postKey);
     console.log('click en like');
 
     const changeData = {
@@ -248,7 +245,7 @@ otherPost = (postKey, post) => {
       mode: post.mode,
       fullName: post.fullName,
       photoURL: post.photoURL,
-      like: count
+      like: parseInt(postLike.innerHTML) + 1
     };
 
     var updatesUser = {};
