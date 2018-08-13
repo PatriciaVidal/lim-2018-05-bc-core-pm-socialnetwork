@@ -45,7 +45,6 @@ window.onload = () => {
           bodyPostView.innerHTML = post.body;
         }
         const postLike = document.getElementById('count-like-' + snapshot.key);
-        
         postLike.innerHTML = post.like;
 
       });
