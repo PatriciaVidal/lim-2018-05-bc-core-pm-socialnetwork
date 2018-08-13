@@ -43,8 +43,6 @@ window.onload = () => {
           postView.remove();
         }
       });
-
-
     } else {
       goToLogin();
     }
