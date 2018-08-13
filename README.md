@@ -168,6 +168,9 @@ Realizamos entrevista a cinco usuarios de nuestro entorno.
     Uno de los comentarios que recibimos como feedback fue el de retirar en el index (el momento de ingresar a la app) un logo ya que habian 2 y visualmente dieron a entender que una sola vez bastaba para tomar en cuenta de que se trataba.<br>
 
     Aquí link del video del test con el prototipo web al usuario [TestPrototipo](https://youtu.be/xQ4Qgik_mnU)
+
+*  **Conclusiones de testing con el prototipo en HTML.**<br>
+    + El usuario con el que probamos el testing (Lorena Reyes (30 a), madre y estudiante en Laboratoria) en HTML nos comentó que le fue fácil loguearse con google, le pareció más práctico que digitalizar sus datos. Pudo identificar el menú con facilidad, le confundió cual area era pública y cual era privada. Le gustó los colores de la plataforma, encontró rápido como cerrar sesión. 
     
 
 ### Presentación en plataformas digitales (celular, tablet y vista web)
