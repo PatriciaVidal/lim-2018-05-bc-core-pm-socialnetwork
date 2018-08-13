@@ -1,7 +1,6 @@
 const selectMode = document.getElementById('select-mode');
 const photoUserProfile = document.getElementById('photo-user-profile');
 const photoUserPost = document.getElementById('photo-user-post');
-
 const bodyUserPost = document.getElementById('textarea-post-init');
 
 let uid;
@@ -51,8 +50,6 @@ window.onload = () => {
     }
   });
 }
-
-
 
 myPosts = (postKey, post) => {
 
