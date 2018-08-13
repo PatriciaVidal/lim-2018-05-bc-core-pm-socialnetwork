@@ -9,7 +9,7 @@ window.onload = () => {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      
+
       uid = user.uid;
       getUserForId(user.uid, (userDatabase) => {
         console.log(userDatabase);
@@ -21,13 +21,16 @@ window.onload = () => {
 
       });
 
-      getPost(user.id,(userPost)=>{
+      getPost(user.id, (userPost) => {
         let post = userPost.val();
         console.log(post);
+
+
+        
       })
 
       let postRef = firebase.database().ref("posts");
-      
+
       postRef.on('child_added', (snapshot) => {
         let post = snapshot.val();
         console.log(post);
@@ -36,6 +39,7 @@ window.onload = () => {
         } else if (post.mode === 'public') {
           otherPost(snapshot.key, post);
         }
+
       });
 
       postRef.on('child_changed', (snapshot) => {
@@ -130,8 +134,12 @@ myPosts = (postKey, post) => {
   //Boton eliminar
   btnDelete.addEventListener('click', () => {
 
-    firebase.database().ref().child('/user-posts/' + post.uid + '/' + postKey).remove();
-    firebase.database().ref().child('posts/' + postKey).remove();
+    let confirmDelete = confirm('¿Desea eliminar esta publicación?');
+    if (confirmDelete) {
+      firebase.database().ref().child('/user-posts/' + post.uid + '/' + postKey).remove();
+      firebase.database().ref().child('posts/' + postKey).remove();
+    }
+
   });
 
   //boton actualizar
