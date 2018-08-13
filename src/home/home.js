@@ -61,14 +61,19 @@ window.onload = () => {
 }
 
 btnToPost.addEventListener('click', () => {
-  if (bodyUserPost.value.trim().length === 0) {
+  const postContainer = bodyUserPost.value;
+  const selectModePublicate = selectMode.value;
+  const valuePrivacy = postContainer.trim();
 
-    alert("Creo que no haz escrito algun texto para publicar");
-    return;
+  if (postContainer.length !== 0 && valuePrivacy !== '') {
+    if (selectModePublicate == 'public') {
+      createNewPost(uid, bodyUserPost.value, selectMode.value, userFromDatabase);
+    } else if (selectModePublicate == 'private') {
+      createNewPost();
+    }
+  } else {
+    alert('Creo que no haz escrito algun texto para publicar');
   }
-
-  createNewPost(uid, bodyUserPost.value, selectMode.value, userFromDatabase);
-  bodyUserPost.value = "";
 });
 
 btnLogout.addEventListener('click', () => {
