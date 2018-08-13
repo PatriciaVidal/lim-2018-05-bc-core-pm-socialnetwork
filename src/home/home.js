@@ -140,16 +140,18 @@ myPosts = (postKey, post) => {
   //boton actualizar
   btnUpdate.addEventListener('click', () => {
     const body = document.getElementById('textarea-' + postKey);
+
     if (btnUpdate.value === 'Editar') {
       body.disabled = false;
       btnUpdate.value = 'Guardar';
     } else {
       const changeData = {
+        uid: post.uid,
         body: body.value,
         mode: post.mode,
-        uid: post.uid,
         photoURL: post.photoURL,
-        fullName: post.fullName
+        fullName: post.fullName,
+        like: post.like
       };
 
       var updatesUser = {};
